@@ -1,4 +1,31 @@
-$orange: #F08C4D;
-$dark-orange: #E95D29;
-$light-gray: #e6e7e8;
+
+// colour palette
+$orange: #fd6c3e;
+$yellow: #f6ea00;
+$green: #94d142;
+$teal: #1baaa5;
+$dark-teal: #0f6160;
+$darkest-teal: #0c4c49;
+$navy-blue: #1442a2;
+$light-gray: #f2f2f0;
 $gray: #d1d3d4;
+
+// other colours used for shadows
+$another-teal: #216e82;
+$darkest-dark-teal: #304442;
+
+$default-border-radius: 5px;
+
+$gradients: (
+  'pear': linear-gradient(135deg, rgba($yellow 0%, .58), rgba($orange, .58) 100%),
+  'mint': linear-gradient(135deg, rgba($teal 0%, .58), rgba($dark-teal, .58) 100%),
+  'cantaloup': linear-gradient(135deg, rgba($yellow 0%, .58), rgba($green, .58) 100%),
+  'kumquat': linear-gradient(135deg, rgba($yellow 0%, .58), rgba(#fbc517, .58) 100%),
+);
+
+$box-shadow: (
+  'header': 0 2px 4px rgba($darkest-dark-teal, .75),
+  'scoreboard': 0 0 3px rgba($darkest-dark-teal, .4),
+  'buttons': 0 1px 2px rgba($another-teal, .3),
+  'tabs': 0 2px 2px rgba($dark-teal, .14),
+);
