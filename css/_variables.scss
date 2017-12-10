@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
 
 // colour palette
 $orange: #fd6c3e;
@@ -14,6 +15,9 @@ $gray: #d1d3d4;
 $another-teal: #216e82;
 $darkest-dark-teal: #304442;
 
+// colours with names 
+$global-font-color: $darkest-teal;
+
 $default-border-radius: 5px;
 
 $gradients: (
@@ -29,3 +33,49 @@ $box-shadow: (
   'buttons': 0 1px 2px rgba($another-teal, .3),
   'tabs': 0 2px 2px rgba($dark-teal, .14),
 );
+
+$normal: 400;
+$bold: 500;
+$ultra-bold: 700;
+
+// Just a place with all the special text styles
+$type-styles: (
+  'default': (
+    font-family: 'Roboto',
+    font-size: rem-calc(16),
+    font-weight: 500,
+    color: $global-font-color,
+    line-height: 1.2,
+  ),
+  'scores': (
+    font-size: rem-calc(64),
+    font-weight: $ultra-bold,
+  ),
+  'questions': (
+    font-size: rem-calc(22),
+    font-weight: $ultra-bold,
+  ),
+  'answers': (
+    font-size: rem-calc(18),
+    font-weight: $bold,
+  ),
+  'answerSubtitle': (
+    font-size: rem-calc(13),
+    font-weight: $bold,
+  )
+  'scoreNavigation': (
+    font-size: rem-calc(14),
+    text-transform: uppercase,
+    font-weight: $bold,
+    color: $teal,
+  ),
+  'headerBreadcrumb': (
+    font-weight: $normal,
+    font-size: rem-calc(12),
+    text-transform: uppercase,
+  )
+  'headerTitle': (
+    font-size: rem-calc(18),
+    font-weight: $ultra-bold,
+  )
+)

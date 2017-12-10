@@ -1,0 +1,57 @@
+  
+/////////////////////////////////////////////////////////
+// Previous & Pass buttons
+.navigation {
+  align-items: baseline;
+  margin-bottom: .75rem;
+}
+
+.navigation-button {
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: transparent;
+  color: $light-gray;
+  margin-bottom: 0;
+
+  &.active {
+    color: $orange;
+  }
+
+  &--prev::before {
+    content: '\000AB';
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+  }
+  &--pass::after {
+    content: '\000BB';
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-left: .5rem;
+  }
+}
+
+
+//////////////////////////////////////////////////////////
+// Slidy dots
+.breadcrumbs {
+  text-align: center;
+}
+
+.breadcrumbs-dot {
+  display: inline-block;
+  padding:top;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid $gray;
+
+  & ~ & {
+    margin-left: .35rem;
+  }
+}
+
+.breadcrumbs > div.active {
+  border-color: $teal;
+  background-color: $teal;
+}

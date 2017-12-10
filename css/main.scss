@@ -1,13 +1,17 @@
 // Main import file
 
 // SASS files
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
+@import 'icons';
+@import 'typography';
 
 // General styles
-@import "normalize";
-@import "base";
+@import 'normalize';
+@import 'base';
+@import 'navigation';
+@import 'scoreboard';
 
 // Modules
-@import "modules/header";
-@import "modules/launch";
+@import 'modules/header';
+@import 'modules/launch';
