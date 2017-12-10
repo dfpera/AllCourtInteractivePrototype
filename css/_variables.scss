@@ -17,10 +17,10 @@ $darkest-dark-teal: #304442;
 $default-border-radius: 5px;
 
 $gradients: (
-  'pear': linear-gradient(135deg, rgba($yellow 0%, .58), rgba($orange, .58) 100%),
-  'mint': linear-gradient(135deg, rgba($teal 0%, .58), rgba($dark-teal, .58) 100%),
-  'cantaloup': linear-gradient(135deg, rgba($yellow 0%, .58), rgba($green, .58) 100%),
-  'kumquat': linear-gradient(135deg, rgba($yellow 0%, .58), rgba(#fbc517, .58) 100%),
+  'pear': linear-gradient(135deg, rgba($yellow, .58), rgba($orange, .58) 100%),
+  'mint': linear-gradient(135deg, rgba($teal, .58), rgba($dark-teal, .58) 100%),
+  'cantaloup': linear-gradient(135deg, rgba($yellow, .58), rgba($green, .58) 100%),
+  'kumquat': linear-gradient(135deg, rgba($yellow, .58), rgba(#fbc517, .58) 100%),
 );
 
 $box-shadow: (
