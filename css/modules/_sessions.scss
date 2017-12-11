@@ -1,0 +1,69 @@
+.session {
+  box-shadow: map-get($box-shadow, 'buttons');
+  padding: 0;
+  margin: 1rem;
+  border-radius: 3px;
+  height: 7.5rem;
+  .session_img {
+    width: 5rem;
+    height: 100%;
+    border-radius: 3px 0 0 3px;
+    float: left;
+    &.match {
+      background-color: $orange;
+    }
+    &.hitting {
+      background-color: $navy-blue;
+    }
+    &.practice {
+      background-color: $green;
+    }
+  }
+  .session_info {
+    padding: 0.6rem;
+    margin-left: 5.25rem;
+    .session_name {
+      color: $dark-teal;
+    }
+    .session_scoreboard {
+      $session_scoreboard: map-get($type-styles, 'sessionScoreboard');
+      @each $property, $value in $session_scoreboard {
+        #{$property}: #{$value};
+      }
+      padding: 0rem;
+      margin: 0.5rem 0 0.5rem 0;
+      width: 100%;
+      border-collapse: collapse;
+      tr {
+        border-bottom: 1px solid #ddd;
+        padding: 0.5rem;
+        height: 1.7rem;
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+    .session_date {
+      $session_scoreboard: map-get($type-styles, 'sessionScoreboard');
+      @each $property, $value in $session_scoreboard {
+        #{$property}: #{$value};
+      }
+      font-size: 0.75em;
+    }
+  }
+}
+
+  .create_btn {
+    position: fixed;
+    top: rem-calc(624);
+    padding: 0 0.75rem 0 0;
+    color: $teal;
+    font-size: 2.25rem;
+    border: 0;
+    background: linear-gradient(135deg, #faf189, #fddc82);
+    height: 4rem;
+    width: 4rem;
+    vertical-align: bottom;
+    border-radius: 0 4rem 0 0;
+    box-shadow: 0rem -0.04rem 0.5rem 0px rgba(0,0,0,0.2);
+  }

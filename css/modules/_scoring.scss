@@ -1,0 +1,41 @@
+.question-text {
+  $scoreQFont: map-get($type-styles, 'questions');
+  @each $property, $value in $scoreQFont {
+    #{$property}: $value;
+  }
+}
+
+.questions {
+  button.btn {
+    background: transparent;
+    //border: 1px solid $gray;
+    box-shadow: map-get($box-shadow, 'buttons');
+    $scoreAFont: map-get($type-styles, 'answers');
+    @each $property, $value in $scoreAFont {
+      #{$property}: $value;
+    }
+    padding: 1.0rem;
+
+    > svg {
+      margin: 0 0 -0.1rem 0.5rem;
+      height: 1.0rem;
+      width: auto;
+    }
+
+    .arrow {
+      display: inline-block;
+      fill: map-get(map-get($type-styles, 'answers'), 'color');
+    }
+
+    &.doubleFault {
+      display: none;
+    }
+
+    .pName {
+      $scoreASFont: map-get($type-styles, 'answerSubtitle');
+      @each $property, $value in $scoreASFont {
+        #{$property}: $value;
+      }
+    }
+  }
+}

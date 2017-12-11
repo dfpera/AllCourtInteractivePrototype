@@ -1,40 +1,41 @@
-  
-/////////////////////////////////////////////////////////
 // Previous & Pass buttons
 .navigation {
   align-items: baseline;
   margin-bottom: .75rem;
 }
 
-.navigation-button {
-  text-transform: uppercase;
-  font-weight: 500;
+.navigationButton {
+  $scoreNavFont: map-get($type-styles, 'scoreNavigation');
+  @each $property, $value in $scoreNavFont {
+      #{$property}: $value;
+  }
   background-color: transparent;
-  color: $light-gray;
-  margin-bottom: 0;
+  margin-top: 1.75rem;
+  margin-bottom: 1.0rem;
 
-  &.active {
-    color: $orange;
+  &.disabled {
+    color: transparentize(map-get(map-get($type-styles, 'scoreNavigation'), 'color'), 0.3);
+
+    .arrow {
+      fill: transparentize(map-get(map-get($type-styles, 'scoreNavigation'), 'color'), 0.3);
+    }
   }
 
-  &--prev::before {
-    content: '\000AB';
-    font-weight: normal;
-    font-size: 1.5rem;
-    margin-right: .5rem;
+  > svg {
+    margin: 0 0.5rem -0.1rem 0.5rem;
+    height: 1.0rem;
+    width: auto;
   }
-  &--pass::after {
-    content: '\000BB';
-    font-weight: normal;
-    font-size: 1.5rem;
-    margin-left: .5rem;
+
+  .arrow {
+    display: inline-block;
+    fill: map-get(map-get($type-styles, 'scoreNavigation'), 'color');
   }
 }
 
-
-//////////////////////////////////////////////////////////
 // Slidy dots
 .breadcrumbs {
+  margin-left: -0.5rem;
   text-align: center;
 }
 
@@ -44,7 +45,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid $gray;
+  background: $light-gray;
 
   & ~ & {
     margin-left: .35rem;
