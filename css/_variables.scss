@@ -55,6 +55,12 @@ $type-styles: (
     font-size: 4rem,
     font-weight: $ultra-bold,
     line-height: 1,
+    color: $darkest-teal,
+  ),
+  'setScore': (
+    text-align: center,
+    opacity: .8,
+    color: $dark-teal,
   ),
   'questions': (
     font-family: $roboto,

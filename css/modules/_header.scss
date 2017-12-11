@@ -4,22 +4,40 @@
   color: #fff;
   background: map-get($gradients, 'mint');
   padding: $global-padding;
+  padding-top: 2rem;
   box-shadow: map-get($box-shadow, 'header');
+  position: relative;
 }
+
+  .header_androidStatusBar {
+    background-image: url($icon-path + 'androidStatusbar.svg');
+    background-repeat: no-repeat;
+    height: .875rem;
+    width: rem-calc(90);
+    margin-bottom: .5rem;
+    position: absolute;
+    right: .35rem;
+    // left: 0;
+    top: .35rem;
+  }
+
   .header_topNav {
-    margin-bottom: 1rem;
+    margin-bottom: .75rem;
+    display: flex;
+    flex-direction: row;
+
+    &Hamburger {
+      margin-right: 1rem;
+    }
+    &Kebab {
+      margin-left: auto;
+    }
   }
 
   .header_breadcrumbs {
-    $header-breadcrumb: map-get($type-styles, 'headerBreadcrumb');
-    @each $property, $value in $header-breadcrumb {
-      #{$property}: #{$value};
-    }
+    @include type-style('headerBreadcrumb');
   }
 
   .header_title {
-    $header-title: map-get($type-styles, 'headerTitle');
-    @each $property, $value in $header-title {
-      #{$property}: #{$value};
-    }
+    @include type-style('headerTitle');
   }

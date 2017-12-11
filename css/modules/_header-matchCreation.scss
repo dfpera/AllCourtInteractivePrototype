@@ -1,0 +1,39 @@
+
+.matchCreation {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+  .matchCreation_inputGroup {
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 1rem;
+  }
+
+  .matchCreation_playerGroup {
+    display: flex;
+  }
+    .matchCreation_player {
+      width: 48%;
+      & ~ & {
+        margin-left: 4%;
+      }
+    }
+
+  .matchCreation_label {
+    // font-weight: $normal;
+    // text-transform: uppercase;
+    font-size: rem-calc(12);
+    letter-spacing: 0.0125rem;
+    margin-bottom: .25rem;
+  }
+
+  .matchCreation_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    :last-child {
+      margin-left: auto;
+    }
+  }

@@ -10,7 +10,10 @@ $icons: (
   'loopBackArrow': 'loopBackArrow',
   'tennisBall': 'tennisBall',
   'plus': 'plus',
+  'hamburger': 'hamburger',
+  'kebab': 'kebab',
 );
+  // 'androidStatusbar': 'statusBar',
 
 .icon {
   width: .8rem;
@@ -19,8 +22,14 @@ $icons: (
   display: inline-block;
 }
 
+.icon-block { display: block; }
+
 @each $icon-file-name, $icon-name in $icons {
   .icon-#{$icon-name} {
     background-image: url($icon-path + $icon-file-name + '.svg');
   }
+}
+
+.icon-kebab {
+  width: .225rem;
 }
