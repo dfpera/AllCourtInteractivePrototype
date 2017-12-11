@@ -10,11 +10,15 @@
 }
 
 .matchOption {
+  min-height: 2.75rem;
   margin: 1rem;
-  padding-bottom: 0.75rem;
+  padding: 0 0 0.75rem 0;
   border-bottom: thin solid $light-gray;
+  &:last-child {
+    border: 0;
+  }
   .optionName {
-    margin: 0.5rem 0.85rem 0.35rem 0;
+    margin: 0rem 0.85rem 0.35rem 0;
     font-size: 1rem;
     color: $bold;
     font-weight: $normal;
@@ -25,14 +29,36 @@
       #{$property}: #{$value};
     }  
     color: $another-teal;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
 
+
+
+.checkOptions {
+  float: left;
+}
 .checkBox {
   float: right;
-  display: block;
-  
+  // display: block;
+  //position: absolute;
+  //opacity: 0;
+}
+.checkboxContainer {
+  width: 25px;
+  margin: 20 100px;
+  position: relative;
+}
+
+.checkboxContainer label {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border:1px solid #ddd;
 }
 
 .setsGroup {
@@ -58,4 +84,57 @@
     color: $dark-teal;
   }
 }
+
+.courtGroup {
+  text-align: center;
+  .courtBtn {
+    display: none;
+  }
+  .courtBtn:checked + .courtType {
+    background: $teal;
+    color: #fff;
+    transition: background 300ms ease;
+  }
+  .courtType {
+    background: #fff;
+    box-shadow: map-get($box-shadow, 'buttons');
+    border-radius: $default-border-radius;
+    width: 8.7rem;
+    padding: 0.5rem 0.5rem 0.6rem 0.5rem;
+    margin: 0.2rem;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    color: $dark-teal;
+  }
+}
+
+.dropdown {
+  float: right;
+}
+
+.createMatch {
+  text-align: center;
+  padding: 0 0.75rem 0 0;
+  color: $another-teal;
+  font-size: 1.05rem;
+  border: 0;
+  background: linear-gradient(135deg, #faf189, #fddc82);
+  height: 3rem;
+  width: 100%;
+  border-radius: $default-border-radius;
+  &:hover {
+    cursor: pointer;
+    color: $yellow;
+    background: #fff;
+    transition: background 300ms ease;
+  }
+}
+
+.carousel {
+  height: 4rem;
+}
+
+
+
     
