@@ -1,8 +1,5 @@
 body {
-  $default-font: map-get($type-styles, 'default');
-  @each $property, $value in $default-font {
-    #{$property}: #{$value};
-  }
+  @include type-style('default');
 }
 
 h1,

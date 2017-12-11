@@ -12,3 +12,10 @@
   // $rems: $value/strip-unit($base-font-size) + unquote('rem');
   @return $value/strip-unit($base-font-size) + unquote('rem');
 }
+
+@mixin type-style($style) {
+  // $nested-map: map-get($type-styles, $style);
+  @each $property, $values in map-get($type-styles, $style) {
+    #{$property}: #{$values};
+  }
+}

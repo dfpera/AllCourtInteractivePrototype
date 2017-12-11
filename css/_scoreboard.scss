@@ -1,5 +1,4 @@
-
-
+// Large Scoreboard //////////////////////////////////////////////////////
 .scoreboard {
   color: $global-font-color;
   text-align: center;
@@ -8,6 +7,7 @@
   background-color: #fff;
   border-radius: $default-border-radius;
   box-shadow: map-get($box-shadow, 'scoreboard');
+  margin-top: 1.5rem;
 }
   
   .scoreboard_playerScore {
@@ -18,7 +18,7 @@
       margin-bottom: .5rem;
     }
 
-    // The scores themselves /////////////////////////////////
+    // The scores themselves ///////
     .scoreboard_scoreGroup {
       display: flex;
       align-items: center;
@@ -34,19 +34,15 @@
         }
       }
       .scoreboard_scoreNum {
-        $scoreStyles: map-get($type-styles, 'scores');
-        @each $property, $value in $scoreStyles {
-          #{$property}: $value;
-        }
+        @include type-style('scores');
         margin: 0;
         padding: 0 .75rem;
       }
 
-  // The set-score styles /////////////////////////////////
+  // The set-score styles ///////////
   .scoreboard_setScoreGroup {
+    @include type-style('setScore');
     width: 15%;
-    text-align: center;
-    color: $teal;
   }
     .scoreboard_setScores {
       display: flex;
@@ -68,3 +64,38 @@
         padding-top: .125rem;
         padding-bottom: .125rem;
       }
+
+
+// Horizontal Scoreboard //////////////////////////////////////////////////
+.scoreboardH {
+  padding: 1.125rem;
+}
+
+  .scoreboardH_column {
+    >:first-child { padding-bottom: .5rem; }
+    >:nth-child(2n) { 
+      padding-top: .5rem;
+      border-top: 1px solid rgba($teal, .4);
+    }
+
+    &.isActive {
+      >:nth-child(2) {
+        border-top: 2px solid $teal;
+      }
+    }
+  }
+
+  .scoreboardH_playerNames {
+    text-align: left;
+    width: 60%;
+  }
+    .scoreboardH_playerNameGroup {
+    }
+
+  .scoreboardH_setScores {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    width: 40%;
+    > * { width: 25%; }
+  }
