@@ -15,10 +15,10 @@ $gray: #d1d3d4;
 $another-teal: #216e82;
 $darkest-dark-teal: #304442;
 
-// colours with names 
+// global variables
 $global-font-color: $darkest-teal;
-
 $default-border-radius: 5px;
+$global-padding: 1rem;
 
 $gradients: (
   'pear': linear-gradient(135deg, rgba($yellow, .58), rgba($orange, .58) 100%),
@@ -62,7 +62,7 @@ $type-styles: (
   'answerSubtitle': (
     font-size: rem-calc(13),
     font-weight: $bold,
-  )
+  ),
   'scoreNavigation': (
     font-size: rem-calc(14),
     text-transform: uppercase,
@@ -73,9 +73,9 @@ $type-styles: (
     font-weight: $normal,
     font-size: rem-calc(12),
     text-transform: uppercase,
-  )
+  ),
   'headerTitle': (
     font-size: rem-calc(18),
     font-weight: $ultra-bold,
-  )
+  ),
 )
