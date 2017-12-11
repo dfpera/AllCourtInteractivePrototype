@@ -16,6 +16,7 @@ $icons: (
   width: .8rem;
   height: .8rem;
   background-repeat: no-repeat;
+  display: inline-block;
 }
 
 @each $icon-file-name, $icon-name in $icons {

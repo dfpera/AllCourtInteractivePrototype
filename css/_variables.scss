@@ -10,6 +10,7 @@ $darkest-teal: #0c4c49;
 $navy-blue: #1442a2;
 $light-gray: #f2f2f0;
 $gray: #d1d3d4;
+$dark-gray: #4d4d4d;
 
 // other colours used for shadows
 $another-teal: #216e82;
@@ -35,6 +36,8 @@ $box-shadow: (
   'tabs': 0 2px 2px rgba($dark-teal, .14),
 );
 
+$roboto: 'Roboto';
+
 $normal: 400;
 $bold: 500;
 $ultra-bold: 700;
@@ -42,7 +45,7 @@ $ultra-bold: 700;
 // Just a place with all the special text styles
 $type-styles: (
   'default': (
-    font-family: 'Roboto',
+    font-family: $roboto,
     font-size: 1rem,
     font-weight: 500,
     color: $global-font-color,
@@ -54,20 +57,26 @@ $type-styles: (
     line-height: 1,
   ),
   'questions': (
+    font-family: $roboto,
     font-size: 1.375rem,
     font-weight: $ultra-bold,
+    color: $darkest-teal,
   ),
   'answers': (
+    font-family: $roboto,
     font-size: 1.125rem,
     font-weight: $bold,
     line-height: 1,
+    color: $darkest-teal,
   ),
   'answerSubtitle': (
     font-size: .8125rem,
     font-weight: $bold,
+    color: $dark-gray,
   ),
   'scoreNavigation': (
     font-size: .875rem,
+    font-family: $roboto,
     text-transform: uppercase,
     font-weight: $bold,
     color: $teal,
