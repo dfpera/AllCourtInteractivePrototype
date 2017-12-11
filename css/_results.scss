@@ -2,9 +2,17 @@
   display: none !important;
 }
 
+header.results {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
 
 .resultsContainer {
   padding: $global-padding;
+  margin-top: 241px;
 }
 
 .results-rowCentering {
@@ -35,37 +43,39 @@
   border-radius: $default-border-radius;
   box-shadow: map-get($box-shadow, 'sets');
 }
-  .resultsSet_title {
+
+.resultsSet_title {
+}
+
+.resultsGame {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  &:not(:last-of-type) { border-bottom: 1px dashed rgba($teal, .4); }
+}
+
+.resultsGame_title {
+  font-weight: $normal;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+
+  &:first-of-type {
+    padding-top: 1rem;
+  }
+}
+
+.resultsPoint {
+  font-weight: $normal;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-bottom: .75rem;
+  display: flex;
+
+  &-p1 {
+    // width: 40%;
   }
 
-    .resultsGame {
-      padding-left: .5rem;
-      padding-right: .5rem;
-      &:not(:last-of-type) { border-bottom: 1px dashed rgba($teal, .4); }
-    }
-      .resultsGame_title {
-        font-weight: $normal;
-        padding-top: .75rem;
-        padding-bottom: .75rem;
-
-        &:first-of-type {
-          padding-top: 1rem;
-        }
-      }
-
-        .resultsPoint {
-          font-weight: $normal;
-          padding-left: .5rem;
-          padding-right: .5rem;
-          padding-bottom: .75rem;
-          display: flex;
-
-          &-p1 {
-            // width: 40%;
-          }
-
-          &-p2 {
-            // width: 40%;
-            padding-left: 1rem;
-          }
-        }
+  &-p2 {
+    // width: 40%;
+    padding-left: 1rem;
+  }
+}

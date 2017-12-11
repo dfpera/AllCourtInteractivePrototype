@@ -1,9 +1,11 @@
 .question-text {
-  $scoreQFont: map-get($type-styles, 'questions');
-  @each $property, $value in $scoreQFont {
-    #{$property}: $value;
+  margin-top: 1.75rem;
+  h3 {
+    $scoreQFont: map-get($type-styles, 'questions');
+    @each $property, $value in $scoreQFont {
+      #{$property}: $value;
+    }
   }
-  margin-top: 2.0rem;
 }
 
 .questions {
@@ -38,5 +40,15 @@
         margin-bottom: -0.1rem;
       }
     }
+  }
+}
+
+html.noScrolling {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }

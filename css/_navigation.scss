@@ -10,8 +10,8 @@
       #{$property}: $value;
   }
   background-color: transparent;
-  margin-top: 1.75rem;
-  margin-bottom: 1.0rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
 
   &.disabled {
     color: transparentize(map-get(map-get($type-styles, 'scoreNavigation'), 'color'), 0.3);
