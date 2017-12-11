@@ -87,4 +87,10 @@ $type-styles: (
     text-transform: uppercase,
     letter-spacing: .025rem,
   ),
+  'sessionScoreboard': (
+    font-size: .95rem,
+    font-weight: $normal,
+    color: $another-teal,
+    letter-spacing: .025rem,
+  )
 )
