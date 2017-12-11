@@ -21,7 +21,7 @@ $icons: (
   background-repeat: no-repeat;
 }
 
-.icon-block { display: block; }
+.icon-iblock { display: inline-block; }
 
 @each $icon-file-name, $icon-name in $icons {
   .icon-#{$icon-name} {

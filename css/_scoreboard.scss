@@ -3,7 +3,7 @@
   color: $global-font-color;
   text-align: center;
   display: flex;
-  padding: 1.5rem 1.125rem 1.125rem;
+  padding: 1.125rem 1rem 1rem;
   background-color: #fff;
   border-radius: $default-border-radius;
   box-shadow: map-get($box-shadow, 'scoreboard');
@@ -29,6 +29,7 @@
       }
     }
       .scoreboard_scoreIconGroup {
+        width: .8rem;
         * ~ * {
           margin-top: .25rem;
         }
