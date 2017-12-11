@@ -23,14 +23,14 @@ $global-padding: 1rem;
 
 $gradients: (
   'pear': linear-gradient(135deg, rgba($yellow, .58), rgba($orange, .58) 100%),
-  'mint': linear-gradient(135deg, rgba($teal, .58), rgba($dark-teal, .58) 100%),
+  'mint': linear-gradient(135deg, rgba($teal, 1), rgba($dark-teal, 1) 100%),
   'cantaloup': linear-gradient(135deg, rgba($yellow, .58), rgba($green, .58) 100%),
   'kumquat': linear-gradient(135deg, rgba($yellow, .58), rgba(#fbc517, .58) 100%),
 );
 
 $box-shadow: (
   'header': 0 2px 4px rgba($darkest-dark-teal, .75),
-  'scoreboard': 0 0 3px rgba($darkest-dark-teal, .4),
+  'scoreboard': 0 0 3px rgba($darkest-dark-teal, .6),
   'buttons': 0 1px 2px rgba($another-teal, .3),
   'tabs': 0 2px 2px rgba($dark-teal, .14),
 );
@@ -43,40 +43,48 @@ $ultra-bold: 700;
 $type-styles: (
   'default': (
     font-family: 'Roboto',
-    font-size: rem-calc(16),
+    font-size: 1rem,
     font-weight: 500,
     color: $global-font-color,
     line-height: 1.2,
   ),
   'scores': (
-    font-size: rem-calc(64),
+    font-size: 4rem,
     font-weight: $ultra-bold,
+    line-height: 1,
   ),
   'questions': (
-    font-size: rem-calc(22),
+    font-size: 1.375rem,
     font-weight: $ultra-bold,
   ),
   'answers': (
-    font-size: rem-calc(18),
+    font-size: 1.125rem,
     font-weight: $bold,
+    line-height: 1,
   ),
   'answerSubtitle': (
-    font-size: rem-calc(13),
+    font-size: .8125rem,
     font-weight: $bold,
   ),
   'scoreNavigation': (
-    font-size: rem-calc(14),
+    font-size: .875rem,
     text-transform: uppercase,
     font-weight: $bold,
     color: $teal,
   ),
   'headerBreadcrumb': (
     font-weight: $normal,
-    font-size: rem-calc(12),
+    font-size: .66667rem,
     text-transform: uppercase,
   ),
   'headerTitle': (
-    font-size: rem-calc(18),
+    font-size: 1.125rem,
     font-weight: $ultra-bold,
+  ),
+  'slideTabs': (
+    font-size: .75rem,
+    font-weight: $ultra-bold,
+    text-transform: uppercase,
+    letter-spacing: .025rem,
   ),
 )

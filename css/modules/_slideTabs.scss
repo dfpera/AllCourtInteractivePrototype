@@ -1,0 +1,21 @@
+
+.slideTabs {
+  margin-bottom: 1.5rem;
+  background-color: rgba(#fff, .2);
+  border-radius: .75rem / 50%;
+  display: flex;
+  justify-content: space-between;
+}
+  .slideTabs_item {
+    $slideTabs: map-get($type-styles, 'slideTabs');
+    @each $property, $value in $slideTabs {
+      #{$property}: #{$value};
+    }
+    padding: .25rem 1.5rem;
+    border-radius: .75rem / 50%;
+
+    &.isActive {
+      background-color: #fff;
+      color: $dark-teal;
+    }
+  }

@@ -4,4 +4,22 @@
   color: #fff;
   background: map-get($gradients, 'mint');
   padding: $global-padding;
+  box-shadow: map-get($box-shadow, 'header');
 }
+  .header_topNav {
+    margin-bottom: 1rem;
+  }
+
+  .header_breadcrumbs {
+    $header-breadcrumb: map-get($type-styles, 'headerBreadcrumb');
+    @each $property, $value in $header-breadcrumb {
+      #{$property}: #{$value};
+    }
+  }
+
+  .header_title {
+    $header-title: map-get($type-styles, 'headerTitle');
+    @each $property, $value in $header-title {
+      #{$property}: #{$value};
+    }
+  }

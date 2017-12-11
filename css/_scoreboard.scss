@@ -1,5 +1,70 @@
 
 
 .scoreboard {
+  color: $global-font-color;
+  text-align: center;
+  display: flex;
+  padding: 1.5rem 1.125rem 1.125rem;
   background-color: #fff;
+  border-radius: $default-border-radius;
+  box-shadow: map-get($box-shadow, 'scoreboard');
 }
+  
+  .scoreboard_playerScore {
+    width: 42.5%;
+  }
+
+    .scoreboard_playerName {
+      margin-bottom: .5rem;
+    }
+
+    // The scores themselves /////////////////////////////////
+    .scoreboard_scoreGroup {
+      display: flex;
+      align-items: center;
+
+      &P1 { }
+      &P2 {
+        justify-content: flex-end;
+      }
+    }
+      .scoreboard_scoreIconGroup {
+        * ~ * {
+          margin-top: .25rem;
+        }
+      }
+      .scoreboard_scoreNum {
+        $scoreStyles: map-get($type-styles, 'scores');
+        @each $property, $value in $scoreStyles {
+          #{$property}: $value;
+        }
+        margin: 0;
+        padding: 0 .75rem;
+      }
+
+  // The set-score styles /////////////////////////////////
+  .scoreboard_setScoreGroup {
+    width: 15%;
+    text-align: center;
+    color: $teal;
+  }
+    .scoreboard_setScores {
+      display: flex;
+      justify-content: center;
+    }
+      .scoreboard_setScoreTitle {
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+        font-size: rem-calc(13);
+      }
+      .scoreboard_playerOneSets {
+        padding-right: .5rem;
+        margin-right: .5rem;
+        border-right: 1px solid $teal;
+      }
+      .scoreboard_playerTwoSets {
+      }
+      .scoreboard_setNums {
+        padding-top: .125rem;
+        padding-bottom: .125rem;
+      }

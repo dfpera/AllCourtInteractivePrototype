@@ -1,30 +1,25 @@
 
 $icon-path: '../img/';
 $icons: (
-  'downArrow': 'DownArrow',
-  'upArrow': 'UpArrow',
-  'downV': 'DownV',
-  'upV': 'UpV',
-  'leftArrow': 'LeftArrow',
-  'rightArrow': 'RightArrow',
-  'loopBackArrow': 'LoopBackArrow',
-  'tennisBall': 'TennisBall',
+  'downArrow': 'downArrow',
+  'upArrow': 'upArrow',
+  'downV': 'downV',
+  'upV': 'upV',
+  'leftArrow': 'leftArrow',
+  'rightArrow': 'rightArrow',
+  'loopBackArrow': 'loopBackArrow',
+  'tennisBall': 'tennisBall',
+  'plus': 'plus',
 );
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: .8rem;
+  height: .8rem;
+  background-repeat: no-repeat;
 }
 
 @each $icon-file-name, $icon-name in $icons {
   .icon-#{$icon-name} {
     background-image: url($icon-path + $icon-file-name + '.svg');
   }
-}
-
-
-
-.tennis-ball {
-  width: 1.5rem;
-  height: 1.5rem;
 }
