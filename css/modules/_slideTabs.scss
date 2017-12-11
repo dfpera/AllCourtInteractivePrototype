@@ -11,9 +11,17 @@
     border-radius: .75rem / 50%;
     flex: 1 0 auto;
     text-align: center;
+    position: relative;
 
     &.isActive {
       background-color: #fff;
-      color: $dark-teal;
+      color: $dark-teal !important;
+    }
+
+    .linkFill {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
   }

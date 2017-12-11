@@ -1,0 +1,71 @@
+.hidden {
+  display: none !important;
+}
+
+
+.resultsContainer {
+  padding: $global-padding;
+}
+
+.results-rowCentering {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  >:nth-child(1){
+    // flex: auto;
+    width: 35%;
+  }
+
+  >:nth-child(2) {
+    flex: 1 0 3rem;
+    text-align: center;
+  }
+
+  >:nth-child(3) {
+    // flex: auto;
+    width: 35%;
+    text-align: right;
+  }
+}
+
+.resultsSet {
+  padding: .75rem;
+  background-color: #fff;
+  border-radius: $default-border-radius;
+  box-shadow: map-get($box-shadow, 'sets');
+}
+  .resultsSet_title {
+  }
+
+    .resultsGame {
+      padding-left: .5rem;
+      padding-right: .5rem;
+      &:not(:last-of-type) { border-bottom: 1px dashed rgba($teal, .4); }
+    }
+      .resultsGame_title {
+        font-weight: $normal;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+
+        &:first-of-type {
+          padding-top: 1rem;
+        }
+      }
+
+        .resultsPoint {
+          font-weight: $normal;
+          padding-left: .5rem;
+          padding-right: .5rem;
+          padding-bottom: .75rem;
+          display: flex;
+
+          &-p1 {
+            // width: 40%;
+          }
+
+          &-p2 {
+            // width: 40%;
+            padding-left: 1rem;
+          }
+        }
