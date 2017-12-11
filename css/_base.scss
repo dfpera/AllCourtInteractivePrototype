@@ -67,6 +67,12 @@
     margin-right: auto;
     background-color: #fff;
     box-shadow: map-get($box-shadow, 'buttons');
+    position: relative;
+    overflow-y: scroll;
+
+    &.results {
+      background-color: $light-gray;
+    }
   }
 
   
@@ -78,4 +84,11 @@
   
   .question-text {
     margin-bottom: -.75rem;
+  }
+
+  //////////////////////////////////////////////////////////
+  .linkFill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }

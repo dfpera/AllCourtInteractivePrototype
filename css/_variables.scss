@@ -31,7 +31,8 @@ $gradients: (
 
 $box-shadow: (
   'header': 0 2px 4px rgba($darkest-dark-teal, .75),
-  'scoreboard': 0 0 3px rgba($darkest-dark-teal, .6),
+  'scoreboard': 0 1px 7px rgba($darkest-dark-teal, .6),
+  'sets': 0 1px 5px rgba($darkest-dark-teal, .35),
   'buttons': 0 1px 2px rgba($another-teal, .3),
   'tabs': 0 2px 2px rgba($dark-teal, .14),
 );
@@ -102,4 +103,10 @@ $type-styles: (
     text-transform: uppercase,
     letter-spacing: .025rem,
   ),
+  'sessionScoreboard': (
+    font-size: .95rem,
+    font-weight: $normal,
+    color: $another-teal,
+    letter-spacing: .025rem,
+  )
 )

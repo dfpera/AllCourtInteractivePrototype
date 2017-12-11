@@ -11,10 +11,14 @@
 @import 'base';
 @import 'navigation';
 @import 'scoreboard';
+@import 'results';
+@import 'analysis';
 
 // Modules
 @import 'modules/slideTabs';
 @import 'modules/header';
+@import 'modules/launch';
+@import 'modules/sessions';
 @import 'modules/scoring';
 @import 'modules/header-matchCreation';
 @import 'modules/launch';
