@@ -3,6 +3,7 @@
   @each $property, $value in $scoreQFont {
     #{$property}: $value;
   }
+  margin-top: 2.0rem;
 }
 
 .questions {
@@ -27,14 +28,14 @@
       fill: map-get(map-get($type-styles, 'answers'), 'color');
     }
 
-    &.doubleFault {
-      display: none;
-    }
-
     .pName {
       $scoreASFont: map-get($type-styles, 'answerSubtitle');
       @each $property, $value in $scoreASFont {
         #{$property}: $value;
+      }
+
+      > .icon {
+        margin-bottom: -0.1rem;
       }
     }
   }
