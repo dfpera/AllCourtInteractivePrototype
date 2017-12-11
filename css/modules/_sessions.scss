@@ -9,6 +9,8 @@
     height: 100%;
     border-radius: 3px 0 0 3px;
     float: left;
+    position: relative;
+
     &.match {
       background-color: $orange;
     }
@@ -17,6 +19,12 @@
     }
     &.practice {
       background-color: $green;
+    }
+
+    > img {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
   }
   .session_info {
