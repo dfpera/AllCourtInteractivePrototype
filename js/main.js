@@ -29,63 +29,6 @@ function getPointVal(point) {
   return result;
 }
 
-function updateScoreUI() {
-  $('.jsScoreNumOne').html(getPointVal(point1));
-  $('.jsScoreNumTwo').html(getPointVal(point2));
-  $('#jsP1Set1').html(game1);
-  $('#jsP2Set1').html(game2);
-}
-
-// TODO: Maybe add ad scoring
-function score(player) {
-  if (player == pOne) {
-    point1++;
-    if (point1 > 3) {
-      point1 = 0;
-      point2 = 0;
-      game1++;
-      if (serving == pOne) {
-        serving = pTwo;
-        $('.score.one').removeClass('serve');
-        $('.score.two').addClass('serve');
-      } else if (serving == pTwo) {
-        serving = pOne;
-        $('.score.two').removeClass('serve');
-        $('.score.one').addClass('serve');
-      }
-    }
-  } else if (player == pTwo) {
-    point2++;
-    if (point2 > 3) {
-      point1 = 0;
-      point2 = 0;
-      game2++;
-      if (serving == pOne) {
-        serving = pTwo;
-        $('.scoreboard_scoreGroupP1 .icon-tennisBall').hide('fade', 500);
-        $('.scoreboard_scoreGroupP2 .icon-tennisBall').show('fade', 500);
-      } else if (serving == pTwo) {
-        serving = pOne;
-        $('.scoreboard_scoreGroupP1 .icon-tennisBall').show('fade', 500);
-        $('.scoreboard_scoreGroupP2 .icon-tennisBall').hide('fade', 500);
-      }
-    }
-  }
-  updateScoreUI();
-}
-
-function moveToBreadcrumb(index) {
-  breadcrumbs.removeClass('active');
-  breadcrumbs.eq(index).addClass('active');
-}
-
-function clearArrows() {
-  $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
-  $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
-  $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
-  $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
-}
-
 function setUpQ1() {
   if (serving === pOne) {
     $('.sWinner .pName').prepend((serving === pOne) ? snOne : snTwo);
@@ -110,6 +53,65 @@ function setUpQ1() {
     $('.rError .pName').prepend((serving === pOne) ? snOne : snTwo);
     $('.rError .pName > .icon').addClass('icon-upArrow');
   }
+}
+
+function updateScoreUI() {
+  $('.jsScoreNumOne').html(getPointVal(point1));
+  $('.jsScoreNumTwo').html(getPointVal(point2));
+  $('#jsP1Set1').html(game1);
+  $('#jsP2Set1').html(game2);
+}
+
+// TODO: Maybe add ad scoring
+function score(player) {
+  if (player == pOne) {
+    point1++;
+    if (point1 > 3) {
+      point1 = 0;
+      point2 = 0;
+      game1++;
+      if (serving == pOne) {
+        serving = pTwo;
+        $('.scoreboard_scoreGroupP1 .icon-tennisBall').hide('fade', 500);
+        $('.scoreboard_scoreGroupP2 .icon-tennisBall').show('fade', 500);
+      } else if (serving == pTwo) {
+        serving = pOne;
+        $('.scoreboard_scoreGroupP1 .icon-tennisBall').show('fade', 500);
+        $('.scoreboard_scoreGroupP2 .icon-tennisBall').hide('fade', 500);
+      }
+      setUpQ1();
+    }
+  } else if (player == pTwo) {
+    point2++;
+    if (point2 > 3) {
+      point1 = 0;
+      point2 = 0;
+      game2++;
+      if (serving == pOne) {
+        serving = pTwo;
+        $('.scoreboard_scoreGroupP1 .icon-tennisBall').hide('fade', 500);
+        $('.scoreboard_scoreGroupP2 .icon-tennisBall').show('fade', 500);
+      } else if (serving == pTwo) {
+        serving = pOne;
+        $('.scoreboard_scoreGroupP1 .icon-tennisBall').show('fade', 500);
+        $('.scoreboard_scoreGroupP2 .icon-tennisBall').hide('fade', 500);
+      }
+      setUpQ1();
+    }
+  }
+  updateScoreUI();
+}
+
+function moveToBreadcrumb(index) {
+  breadcrumbs.removeClass('active');
+  breadcrumbs.eq(index).addClass('active');
+}
+
+function clearArrows() {
+  $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
+  $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
 }
 
 $(function() {
