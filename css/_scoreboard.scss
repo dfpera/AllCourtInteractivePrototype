@@ -23,21 +23,37 @@
       display: flex;
       align-items: center;
 
-      &P1 { }
+      &P1 { 
+        & .scoreboard_scoreNum {
+          padding: 0 1.75rem 0 1.5rem;
+        }
+      }
       &P2 {
         justify-content: flex-end;
+        & .scoreboard_scoreNum {
+          padding: 0 1.5rem 0 1.75rem;
+        }
       }
     }
       .scoreboard_scoreIconGroup {
-        width: .8rem;
-        * ~ * {
-          margin-top: .25rem;
-        }
+        // width: .8rem;
+        height: rem-calc(64);
+        position: relative;
+
+        // * ~ * {
+        //   margin-top: .25rem;
+        // }
+
+        * { position: absolute; }
+        >:nth-child(1) { top: 0; }
+        >:nth-child(2) { top: 33%; }
+        >:nth-child(3) { top: 66%; }
       }
       .scoreboard_scoreNum {
         @include type-style('scores');
         margin: 0;
-        padding: 0 .75rem;
+        // padding: 0 .75rem;
+        flex: auto;
       }
 
   // The set-score styles ///////////

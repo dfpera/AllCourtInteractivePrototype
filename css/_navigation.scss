@@ -5,13 +5,22 @@
 }
 
 .navigationButton {
-  $scoreNavFont: map-get($type-styles, 'scoreNavigation');
-  @each $property, $value in $scoreNavFont {
-      #{$property}: $value;
-  }
+  @include type-style('scoreNavigation');
   background-color: transparent;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
+
+  >:nth-child(2) {
+    margin-left: .25rem;
+  }
+
+  > svg {
+    width: auto;
+  }
+
+  &.pass {
+    text-align: right;
+  }
 
   &.disabled {
     color: transparentize(map-get(map-get($type-styles, 'scoreNavigation'), 'color'), 0.3);
@@ -19,12 +28,6 @@
     .arrow {
       fill: transparentize(map-get(map-get($type-styles, 'scoreNavigation'), 'color'), 0.3);
     }
-  }
-
-  > svg {
-    margin: 0 0.5rem -0.1rem 0.5rem;
-    height: 1.0rem;
-    width: auto;
   }
 
   .arrow {
