@@ -42,6 +42,9 @@
       margin: 0.5rem 0 0.5rem 0;
       width: 100%;
       border-collapse: collapse;
+      td.won {
+        font-weight: $bold;
+      }
       tr {
         border-bottom: 1px solid #ddd;
         padding: 0.5rem;
@@ -63,7 +66,7 @@
 
   .create_btn {
     position: fixed;
-    top: rem-calc(624);
+    top: rem-calc(552);
     padding: 0 0.75rem 0 0;
     color: $teal;
     font-size: 2.25rem;
@@ -79,4 +82,11 @@
       background: #fff;
       transition: background 300ms ease;
     }
+  }
+
+  .sessions_check {
+    width: 1rem;
+    height: 1rem;
+    display: inline;
+    margin-left: 0.3rem;
   }
