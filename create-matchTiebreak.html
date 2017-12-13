@@ -43,69 +43,30 @@
         </div>
       </section>
       <div class="slideTabs">
-        <a class="slideTabs_item isActive jsScoreKeepingTab">Sets</a>
-        <a href="create-matchTiebreak.html" class="slideTabs_item jsResultsTab create_tabLink">Tiebreak</a>
+        <a href="create-match.html" class="slideTabs_item jsResultsTab create_tabLink">Sets</a>        
+        <a class="slideTabs_item isActive jsScoreKeepingTab">Tiebreak</a>
       </div>
     </header>
 
-      <p class="matchTypeDesc">Sets follow regular tennis scoring rules.</p>
+      <p class="matchTypeDesc">A Tiebreak lets you record a single tie-break game.</p>
 
       <div class="matchOption">
-        <h2 class="optionName">Number of sets</h2>
-        <div class="setsGroup">
-          <input type="radio" name="numSets" id="1set" class="setBtn">
-          <label for="1set" class="numberOfSets">1 set</label>
-          <input type="radio" name="numSets" id="3sets" class="setBtn" checked>
-          <label for="3sets" class="numberOfSets">3 sets</label>
-          <input type="radio" name="numSets" id="5sets" class="setBtn">
-          <label for="5sets" class="numberOfSets">5 sets</label>
-          <input type="radio" name="numSets" id="7sets" class="setBtn">
-          <label for="7sets" class="numberOfSets">7 sets</label>
+        <h2 class="optionName">Win condition</h2>
+        <div class="winCondGroup">
+          <input type="radio" name="winCond" id="winBy2" class="winCondBtn" checked>
+          <label for="winBy2" class="winCond">Win by 2</label>
+          <input type="radio" name="winCond" id="suddenDeath" class="winCondBtn">
+          <label for="suddenDeath" class="winCond">Sudden death</label>
         </div>
       </div>
 
       <div class="matchOption">
         <div class="checkOptions">
-          <h2 class="optionName">Advantage scoring</h2>
-          <p class="optionDesc">Turn advantages on or off.</p>
-        </div>    
-        <input class="checkBox" type="checkbox" checked>
-        <label for="checkBox"></label>
-      </div>    
-
-      <div class="matchOption">
-        <div class="checkOptions">
-          <h2 class="optionName">Tiebreak sets</h2>
-          <p class="optionDesc">Turn tiebreaks at 6-all on or off.</p>
-        </div>
-        <input class="checkBox" type="checkbox">
-      </div>   
-
-      <div class="matchOption">
-        <div class="checkOptions">
-          <h2 class="optionName">Last set</h2>
-          <p class="optionDesc">Decide how the last set is played.</p>
-        </div>
-        <!-- <select class="dropdown" id="lastSet" name="lastSet">
-          <option value="tiebreak">Tiebreak</option>
-        </select> -->
-        <div id="last-set" class="dropdown">
-          <div class="capitalize">Tiebreak</div>
-          <div class="dropdown-caret icon icon-downV"></div>
-          <div class="dropdown-box">
-            <p class="dropdown-content">Super tiebreak</p>
-            <p class="dropdown-content">Win by 2 games</p>
-          </div>
-        </div>
-      </div>   
-
-      <div class="matchOption">
-        <div class="checkOptions">
-          <h2 class="optionName">Games per set</h2>
-          <p class="optionDesc">Decide the number of games played per set.</p>
+          <h2 class="optionName">Number of points</h2>
+          <p class="optionDesc">Decide how many points to play per set</p>
         </div>
         <select class="dropdown" id="numGames" name="numGames">
-          <option value="6">6</option>
+          <option value="6">7</option>
         </select>
       </div>   
 
