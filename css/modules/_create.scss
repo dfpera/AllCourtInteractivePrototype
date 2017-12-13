@@ -2,7 +2,7 @@
   $session_scoreboard: map-get($type-styles, 'sessionScoreboard');
   @each $property, $value in $session_scoreboard {
     #{$property}: #{$value};
-  }  
+  }
   color: $another-teal;
   font-size: 0.85rem;
   text-align: center;
@@ -35,7 +35,7 @@
     $session_scoreboard: map-get($type-styles, 'sessionScoreboard');
     @each $property, $value in $session_scoreboard {
       #{$property}: #{$value};
-    }  
+    }
     color: $another-teal;
     font-size: 0.75rem;
   }
@@ -181,8 +181,52 @@
   fill: $dark-teal;
 }
 
-.dropdown-box {
-  display: none;
+.dropdown {
+  margin-top: 0.6rem;
+  margin-right: 0.1rem;
+  position: relative;
+
+  &#last-set {
+    width: 9rem;
+  }
+
+  &#num-set {
+    width: 2rem;
+  }
+
+  .selected {
+    float: right;
+    display: block;
+    .icon {
+      margin-bottom: -0.2rem;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .dropdown-box {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    display: none;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: map-get($box-shadow, 'buttons');
+    .dropdown-content {
+      font-size: 0.9rem;
+      font-weight: $normal;
+      background: darken(#fff, 3%);
+      min-width: 2rem;
+      text-align: center;
+      padding: 0.35rem 0.5rem 0.35rem 0.5rem;
+      &:hover {
+        cursor: pointer;
+        background: #fff;
+        transition: background 0.5s;
+      }
+    }
+  }
 }
 
 .carousel {
