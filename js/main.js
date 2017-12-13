@@ -1,3 +1,8 @@
+window.odometerOptions = {
+  duration: 100,
+  count: 'count'
+};
+
 var snOne = 'Pachnev';
 var snTwo = 'Verma';
 var lnOne = 'Sam<br>Pachnev';
@@ -15,43 +20,45 @@ var breadcrumbs = $('.breadcrumbs-dot');
 var curQ = 0;
 var question = [];
 
+function getIcon(iconName) {
+  return ' <div class="icon icon-' + iconName + '"></div>';
+}
+
 function getPointVal(point) {
   var result = '';
   if (point == 0) {
-    result = '0';
+    result = '100';
   } else if (point == 1) {
-    result = '15';
+    result = '115';
   } else if (point == 2) {
-    result = '30';
+    result = '130';
   } else if (point == 3) {
-    result = '40';
+    result = '140';
   }
   return result;
 }
 
 function setUpQ1() {
+  var sWinner = (serving === pOne) ? snOne : snTwo;
+  var fault = (serving === pOne) ? snOne : snTwo;
+  var doubleFault = !(serving === pOne) ? snOne : snTwo;
+  var rWinner = !(serving === pOne) ? snOne : snTwo;
+  var rError = (serving === pOne) ? snOne : snTwo;
+  $('.sWinner .pName').html(sWinner + getIcon('upArrow'));
+  $('.fault .pName').html(fault + getIcon('loopBackArrow'));
+  $('.doubleFault .pName').html(doubleFault + getIcon('upArrow'));
+  $('.rWinner .pName').html(rWinner + getIcon('upArrow'));
+  $('.rError .pName').html(rError + getIcon('upArrow'));
   if (serving === pOne) {
-    $('.sWinner .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.sWinner .pName > .icon').addClass('icon-upArrow');
-    $('.fault .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.fault .pName > .icon').addClass('icon-loopBackArrow');
-    $('.doubleFault .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.doubleFault .pName > .icon').addClass('icon-upArrow');
-    $('.rWinner .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.rWinner .pName > .icon').addClass('icon-upArrow');
-    $('.rError .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.rError .pName > .icon').addClass('icon-upArrow');
+    $('.q1 .srv').removeClass('order-2');
+    $('.q1 .srv').addClass('order-1');
+    $('.q1 .rtn').removeClass('order-1');
+    $('.q1 .rtn').addClass('order-2');
   } else {
-    $('.sWinner .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.sWinner .pName > .icon').addClass('icon-upArrow');
-    $('.fault .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.fault .pName > .icon').addClass('icon-loopBackArrow');
-    $('.doubleFault .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.doubleFault .pName > .icon').addClass('icon-upArrow');
-    $('.rWinner .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.rWinner .pName > .icon').addClass('icon-upArrow');
-    $('.rError .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.rError .pName > .icon').addClass('icon-upArrow');
+    $('.q1 .srv').removeClass('order-1');
+    $('.q1 .srv').addClass('order-2');
+    $('.q1 .rtn').removeClass('order-2');
+    $('.q1 .rtn').addClass('order-1');
   }
 }
 
@@ -108,10 +115,10 @@ function moveToBreadcrumb(index) {
 }
 
 function clearArrows() {
-  $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
-  $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
-  $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
-  $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'down'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'down'}, 500);
 }
 
 $(function() {
@@ -242,8 +249,12 @@ $(function() {
       // Update question text
       $('.question-text .q3 .pName').text(pOne);
       $('.winner .pName').text(pOne + "'s ");
-      $('.fError .pName').text(pOne + "'s ");
+      $('.fError .pName').text(pTwo + "'s ");
       $('.uError .pName').text(pTwo + "'s ");
+      $('.q3 .win').removeClass('order-2');
+      $('.q3 .win').addClass('order-1');
+      $('.q3 .err').removeClass('order-1');
+      $('.q3 .err').addClass('order-2');
 
       // Animate question
       $('.q2').hide('drop', {direction: 'left'}, 250);
@@ -258,8 +269,12 @@ $(function() {
       // Update question text
       $('.question-text .q3 .pName').text(pTwo);
       $('.winner .pName').text(pTwo + "'s ");
-      $('.fError .pName').text(pTwo + "'s ");
+      $('.fError .pName').text(pOne + "'s ");
       $('.uError .pName').text(pOne + "'s ");
+      $('.q3 .win').removeClass('order-1');
+      $('.q3 .win').addClass('order-2');
+      $('.q3 .err').removeClass('order-2');
+      $('.q3 .err').addClass('order-1');
 
       // Animate question
       $('.q2').hide('drop', {direction: 'left'}, 250);
