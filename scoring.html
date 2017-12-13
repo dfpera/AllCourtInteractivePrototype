@@ -118,39 +118,39 @@
     </div>
     <div class="questions q1">
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 srv">
           <button type="button" class="btn btn-light btn-lg btn-block sWinner">
             Service winner<br>
             <span class="pName"></span>
           </button>
-        </div>
-        <div class="col-6 faultButton">
-          <div style="position: relative; height: 100%;">
-            <div class="front">
-              <button type="button" class="btn btn-light btn-lg btn-block fault">
-                Fault <div class="icon icon-loopBackArrow"></div><br>
-              </button>
-            </div>
-            <div class="back">
-              <button type="button" class="btn btn-light btn-lg btn-block doubleFault">
-                Double fault<br>
-                <span class="pName"></span>
-              </button>
+          <div class="faultButton">
+            <div style="position: relative; height: 100%;">
+              <div class="front">
+                <button type="button" class="btn btn-light btn-lg btn-block fault">
+                  Fault <div class="icon icon-loopBackArrow"></div><br>
+                </button>
+              </div>
+              <div class="back">
+                <button type="button" class="btn btn-light btn-lg btn-block doubleFault">
+                  Double fault<br>
+                  <span class="pName"></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-6 rtn">
           <button type="button" class="btn btn-light btn-lg btn-block rWinner">
             Return winner<br>
             <span class="pName"></span>
           </button>
-        </div>
-        <div class="col-6">
           <button type="button" class="btn btn-light btn-lg btn-block rError">
             Return error<br>
             <span class="pName"></span>
           </button>
         </div>
+      </div>
+      <div class="row">
         <div class="col-12">
           <button type="button" class="btn btn-light btn-lg btn-block ballin">Ball-in play <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.55 20.89">
             <rect class="arrow" y="9.1" width="17.26" height="2.69" rx="1.34" ry="1.34"/>
@@ -171,17 +171,15 @@
     </div>
     <div class="questions q3">
       <div class="row">
-        <div class="col-12">
-          <button type="button" class="btn btn-light btn-lg btn-block winner"><span class="pName"></span><br>
+        <div class="col-6 win">
+          <button type="button" class="btn btn-light btn-lg btn-block winner">
             Winner</button>
         </div>
-        <div class="col-6">
-          <button type="button" class="btn btn-light btn-lg btn-block fError"><span class="pName"></span><br>
+        <div class="col-6 err">
+          <button type="button" class="btn btn-light btn-lg btn-block fError">
             Forced error</button>
-        </div>
-        <div class="col-6">
-          <button type="button" class="btn btn-light btn-lg btn-block uError"><span class="pName"></span><br>
-              Unforced error</button>
+          <button type="button" class="btn btn-light btn-lg btn-block uError">
+            Unforced error</button>
         </div>
       </div>
     </div>
@@ -194,8 +192,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="lib/jquery-ui/jquery-ui.min.js"></script>
 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-
 <script src="js/main.js"></script>
-<script src="lib/odometer.min.js"></script></script>
+<script src="lib/odometer.min.js"></script>
 </body>
 </html>

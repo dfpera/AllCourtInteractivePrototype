@@ -49,6 +49,17 @@ function setUpQ1() {
   $('.doubleFault .pName').html(doubleFault + getIcon('upArrow'));
   $('.rWinner .pName').html(rWinner + getIcon('upArrow'));
   $('.rError .pName').html(rError + getIcon('upArrow'));
+  if (serving === pOne) {
+    $('.q1 .srv').removeClass('order-2');
+    $('.q1 .srv').addClass('order-1');
+    $('.q1 .rtn').removeClass('order-1');
+    $('.q1 .rtn').addClass('order-2');
+  } else {
+    $('.q1 .srv').removeClass('order-1');
+    $('.q1 .srv').addClass('order-2');
+    $('.q1 .rtn').removeClass('order-2');
+    $('.q1 .rtn').addClass('order-1');
+  }
 }
 
 function updateScoreUI() {
@@ -240,6 +251,10 @@ $(function() {
       $('.winner .pName').text(pOne + "'s ");
       $('.fError .pName').text(pTwo + "'s ");
       $('.uError .pName').text(pTwo + "'s ");
+      $('.q3 .win').removeClass('order-2');
+      $('.q3 .win').addClass('order-1');
+      $('.q3 .err').removeClass('order-1');
+      $('.q3 .err').addClass('order-2');
 
       // Animate question
       $('.q2').hide('drop', {direction: 'left'}, 250);
@@ -256,6 +271,10 @@ $(function() {
       $('.winner .pName').text(pTwo + "'s ");
       $('.fError .pName').text(pOne + "'s ");
       $('.uError .pName').text(pOne + "'s ");
+      $('.q3 .win').removeClass('order-1');
+      $('.q3 .win').addClass('order-2');
+      $('.q3 .err').removeClass('order-2');
+      $('.q3 .err').addClass('order-1');
 
       // Animate question
       $('.q2').hide('drop', {direction: 'left'}, 250);
