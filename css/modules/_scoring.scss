@@ -1,5 +1,14 @@
 .question-text {
-  margin-top: 1.75rem;
+  position: relative;
+  height: 4rem;
+
+  .q0, .q1, .q2, .q3, .q4 {
+    position: absolute;
+    top: 1.75rem;
+    right: 0;
+    left: 0;
+  }
+
   h3 {
     $scoreQFont: map-get($type-styles, 'questions');
     @each $property, $value in $scoreQFont {
@@ -8,7 +17,17 @@
   }
 }
 
+.qBox {
+  position: relative;
+  width: 100%;
+}
+
 .questions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
   button.btn {
     background: transparent;
     //border: 1px solid $gray;
