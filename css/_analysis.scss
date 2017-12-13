@@ -166,7 +166,7 @@
     }
     .ypb_unforcedErrors {
       @include ypbContainer;
-      $height: ($ratioMultiplier*16) + unquote('px');
+      $height: ($ratioMultiplier*30) + unquote('px');
       min-height: $height;
       .ypb_points { text-align: left; }
       .stackedBar { 
@@ -284,6 +284,7 @@
 
         &.green { background: map-get($gradients, 'cantaloup'); }
         &.red { background: map-get($gradients, 'pear'); }
+        &.blue { background: map-get($gradients, 'icecube'); }
 
         .stats_rawNum {
           position: absolute;
