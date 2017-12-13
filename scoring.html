@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link href="lib/open-iconic-bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="lib/odometer-theme-default.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -34,7 +35,7 @@
             <div class="icon icon-block icon-tennisBall"></div>
             <div class="icon icon-block icon-downArrow"></div>
           </div>
-          <p class="scoreboard_scoreNum jsScoreNumOne">0</p>
+          <p class="scoreboard_scoreNum odometer jsScoreNumOne">100</p>
         </div>
       </div>
       <div class="scoreboard_setScoreGroup">
@@ -55,7 +56,7 @@
       <div class="scoreboard_playerScore">
         <p class="scoreboard_playerName">J. Verma</p>
         <div class="scoreboard_scoreGroup scoreboard_scoreGroupP2">
-          <p class="scoreboard_scoreNum jsScoreNumTwo">0</p>
+          <p class="scoreboard_scoreNum odometer jsScoreNumTwo">100</p>
           <div class="scoreboard_scoreIconGroup">
             <div class="icon icon-block icon-upArrow"></div>
             <div class="icon icon-block icon-tennisBall"></div>
@@ -117,39 +118,39 @@
     </div>
     <div class="questions q1">
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 srv">
           <button type="button" class="btn btn-light btn-lg btn-block sWinner">
             Service winner<br>
-            <span class="pName"> <div class="icon"></div></span>
+            <span class="pName"></span>
           </button>
-        </div>
-        <div class="col-6 faultButton">
-          <div style="position: relative; height: 100%;">
-            <div class="front">
-              <button type="button" class="btn btn-light btn-lg btn-block fault">
-                Fault<br>
-              </button>
-            </div>
-            <div class="back">
-              <button type="button" class="btn btn-light btn-lg btn-block doubleFault">
-                Double fault<br>
-                <span class="pName"> <div class="icon"></div></span>
-              </button>
+          <div class="faultButton">
+            <div style="position: relative; height: 100%;">
+              <div class="front">
+                <button type="button" class="btn btn-light btn-lg btn-block fault">
+                  Fault <div class="icon icon-loopBackArrow"></div><br>
+                </button>
+              </div>
+              <div class="back">
+                <button type="button" class="btn btn-light btn-lg btn-block doubleFault">
+                  Double fault<br>
+                  <span class="pName"></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-6 rtn">
           <button type="button" class="btn btn-light btn-lg btn-block rWinner">
             Return winner<br>
-            <span class="pName"> <div class="icon"></div></span>
+            <span class="pName"></span>
           </button>
-        </div>
-        <div class="col-6">
           <button type="button" class="btn btn-light btn-lg btn-block rError">
             Return error<br>
-            <span class="pName"> <div class="icon"></div></span>
+            <span class="pName"></span>
           </button>
         </div>
+      </div>
+      <div class="row">
         <div class="col-12">
           <button type="button" class="btn btn-light btn-lg btn-block ballin">Ball-in play <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.55 20.89">
             <rect class="arrow" y="9.1" width="17.26" height="2.69" rx="1.34" ry="1.34"/>
@@ -170,17 +171,15 @@
     </div>
     <div class="questions q3">
       <div class="row">
-        <div class="col-12">
-          <button type="button" class="btn btn-light btn-lg btn-block winner"><span class="pName"></span><br>
+        <div class="col-6 win">
+          <button type="button" class="btn btn-light btn-lg btn-block winner">
             Winner</button>
         </div>
-        <div class="col-6">
-          <button type="button" class="btn btn-light btn-lg btn-block fError"><span class="pName"></span><br>
+        <div class="col-6 err">
+          <button type="button" class="btn btn-light btn-lg btn-block fError">
             Forced error</button>
-        </div>
-        <div class="col-6">
-          <button type="button" class="btn btn-light btn-lg btn-block uError"><span class="pName"></span><br>
-              Unforced error</button>
+          <button type="button" class="btn btn-light btn-lg btn-block uError">
+            Unforced error</button>
         </div>
       </div>
     </div>
@@ -194,5 +193,6 @@
 <script src="lib/jquery-ui/jquery-ui.min.js"></script>
 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 <script src="js/main.js"></script>
+<script src="lib/odometer.min.js"></script>
 </body>
 </html>

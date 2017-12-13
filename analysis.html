@@ -8,7 +8,7 @@
 <body>
 
   <div class="androidContainer">
-    <header class="header header-scoreKeeping analysis">
+    <header class="header header-analysis">
       <div class="header_topNav">
         <div class="header_topNavHamburger icon icon-block icon-hamburger"></div>
         <div>
@@ -25,8 +25,8 @@
 
       <section class="scoreboard scoreboardH">
         <div class="scoreboardH_playerNames scoreboardH_column">
-          <p class="scoreboardH_playerNameGroup">S. Pachnev <span class="gradientBox gradientBox-color"></span></p>
-          <p class="scoreboardH_playerNameGroup">J. Verma</p>
+          <p class="scoreboardH_playerNameGroup">S. Pachnev <span class="gradientBox gradientBox-p1"></span></p>
+          <p class="scoreboardH_playerNameGroup">J. Verma <span class="gradientBox gradientBox-p2"></span></p>
         </div>
         <div class="scoreboardH_setScores">
           <div class="allSets scoreboardH_column isActive">
@@ -49,18 +49,228 @@
       </section>
     </header>
 
-    <section class="analysisContainer">
-      <a class="analysisTab analysisTab-compare"></a>
+    <article class="analysisContainer">
+      <!-- <a class="analysisTab analysisTab-compare"></a>
       <a href="analysis-sam.html" class="analysisTab analysisTab-p1"></a>
-      <img src="img/analysis-compare.png" style="width:100%;">
-    </section>
+      <img src="img/analysis-compare.png" style="width:100%;"> -->
+      <nav class="analysisTabs">
+        <p class="analysisTabs_item isActive">Compare</p>
+        <p class="analysisTabs_item"><a href="analysis-sam.html" class="linkFill"></a>S. Pachnev</p>
+        <p class="analysisTabs_item"><a class="linkFill"></a>J. Verma</p>
+      </nav>
+      <div class="analysisTabs_bottomCover"></div>
+
+      <article class="hBarGraph">
+        <p class="hBarGraph_xAxisLabel">Total 112 points</p>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Winners</p>
+          <div class="hBarGraph_doubleBars">
+            <div class="hBarGraph_bar">
+              <div class="hBar jsFirstAnim isAnimating" style="width: 6%;"><span class="stats_rawNum">7</span> <span class="stats_percentage">6%</span></div>
+            </div>
+            <div class="hBarGraph_bar">
+              <div class="hBar jsFirstAnim isAnimating" style="width: 4%;"><span class="stats_rawNum">4</span> <span class="stats_percentage">4%</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Errors forced</p>
+          <div class="hBarGraph_doubleBars">
+            <div class="hBarGraph_bar">
+              <div class="hBar jsFirstAnim isAnimating" style="width: 3%;"><span class="stats_rawNum">3</span> <span class="stats_percentage">3%</span></div>
+            </div>
+            <div class="hBarGraph_bar">
+              <div class="hBar jsFirstAnim isAnimating" style="width: 3%;"><span class="stats_rawNum">3</span> <span class="stats_percentage">3%</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Unforced errors</p>
+          <div class="hBarGraph_doubleBars">
+            <div class="hBarGraph_bar">
+              <div class="hBar jsFirstAnim isAnimating" style="width: 8%;"><span class="stats_rawNum">9</span> <span class="stats_percentage">8%</span></div>
+            </div>
+            <div class="hBarGraph_bar">
+              <div class="hBar jsFirstAnim isAnimating" style="width: 14%;"><span class="stats_rawNum">16</span> <span class="stats_percentage">14%</span></div>
+            </div>
+          </div>
+        </article>
+      </article>
+
+      <hr class="analysisHr">
+
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Break points</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width: 50%;">
+              <span class="stats_rawNum">2</span> 
+              <span class="stats_percentage">50%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">4</p>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Hold points</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width: 57%;">
+              <span class="stats_rawNum">4</span> 
+              <span class="stats_percentage">57%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">7</p>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Set points</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating">
+              <span class="stats_rawNum">0</span> 
+              <span class="stats_percentage full">100%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">0</p>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Match points</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating">
+              <span class="stats_rawNum">0</span> 
+              <span class="stats_percentage full">100%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">0</p>
+        </article>
+      </article>
+
+      <hr class="analysisHr">
+
+      <h2>Service</h2>
+
+      <article class="hBarGraph">
+        <p class="hBarGraph_xAxisLabel">Total 28 serves</p>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Service winners</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar pointsWonLost_winners jsFirstAnim isAnimating">
+              <span class="stats_rawNum">2</span> 
+              <span class="stats_percentage">3%</span>
+            </div>
+          </div>
+        </article>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Faults</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar pointsWonLost_errorsForced jsFirstAnim isAnimating">
+              <span class="stats_rawNum">9</span> 
+              <span class="stats_percentage">3%</span>
+            </div>
+          </div>
+        </article>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Double faults</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar pointsWonLost_unforcedErrors jsFirstAnim isAnimating">2 <span class="stats_percentage">7%</span></div>
+          </div>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Wins on 1st serve</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width:79%;">
+              <span class="stats_rawNum">15</span>
+               <span class="stats_percentage">79%</span>
+             </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">19</p>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Wins on 2nd serve</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width:44%;">
+              <span class="stats_rawNum">4</span> 
+              <span class="stats_percentage">44%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">9</p>
+        </article>
+      </article>
+
+      <hr class="analysisHr">
+
+      <h2>Returns</h2>
+
+      <article class="hBarGraph">
+        <p class="hBarGraph_xAxisLabel">Total 28 returns</p>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Return winners</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating">
+              <span class="stats_rawNum">0</span> 
+              <span class="stats_percentage full">100%</span>
+            </div>
+          </div>
+        </article>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Return errors</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width:18%;">
+              <span class="stats_rawNum">5</span> 
+              <span class="stats_percentage">18%</span>
+            </div>
+          </div>
+        </article>
+        <article class="hBarGraph_barGroup">
+          <p class="hBarGraph_yAxisLabel">Double faults</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width:7%;">
+              <span class="stats_rawNum">2</span> 
+              <span class="stats_percentage">7%</span>
+            </div>
+          </div>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Wins on 1st return</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width:39%;">
+              <span class="stats_rawNum">7</span> 
+              <span class="stats_percentage">39%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">18</p>
+        </article>
+      </article>
+      <article class="hBarGraph">
+        <article class="hBarGraph_barGroup hBarGraph_barGroup-tight">
+          <p class="hBarGraph_yAxisLabel">Wins on 2nd serve</p>
+          <div class="hBarGraph_bar">
+            <div class="hBar jsFirstAnim isAnimating" style="width:50%;">
+              <span class="stats_rawNum">5</span> 
+              <span class="stats_percentage">50%</span>
+            </div>
+          </div>
+          <p class="hBarGraph_barTotalLabel">10</p>
+        </article>
+      </article>
+    </article>
   </div>
   
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+
+  <!-- JS for Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+  <script src="js/analysis.js"></script>
 </body>
 </html>
