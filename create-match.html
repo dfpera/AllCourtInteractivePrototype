@@ -55,7 +55,7 @@
         <div class="setsGroup">
           <input type="radio" name="numSets" id="1set" class="setBtn">
           <label for="1set" class="numberOfSets">1 set</label>
-          <input type="radio" name="numSets" id="3sets" class="setBtn">
+          <input type="radio" name="numSets" id="3sets" class="setBtn" checked>
           <label for="3sets" class="numberOfSets">3 sets</label>
           <input type="radio" name="numSets" id="5sets" class="setBtn">
           <label for="5sets" class="numberOfSets">5 sets</label>
@@ -69,7 +69,7 @@
           <h2 class="optionName">Advantage scoring</h2>
           <p class="optionDesc">Turn advantages on or off.</p>
         </div>    
-        <input class="checkBox" type="checkbox">
+        <input class="checkBox" type="checkbox" checked>
         <label for="checkBox"></label>
       </div>    
 
@@ -84,17 +84,25 @@
       <div class="matchOption">
         <div class="checkOptions">
           <h2 class="optionName">Last set</h2>
-          <p class="optionDesc">Determine how the last set is played.</p>
+          <p class="optionDesc">Decide how the last set is played.</p>
         </div>
-        <select class="dropdown" id="lastSet" name="lastSet">
+        <!-- <select class="dropdown" id="lastSet" name="lastSet">
           <option value="tiebreak">Tiebreak</option>
-        </select>
+        </select> -->
+        <div id="last-set" class="dropdown">
+          <div class="capitalize">Tiebreak</div>
+          <div class="dropdown-caret icon icon-downV"></div>
+          <div class="dropdown-box">
+            <p class="dropdown-content">Super tiebreak</p>
+            <p class="dropdown-content">Win by 2 games</p>
+          </div>
+        </div>
       </div>   
 
       <div class="matchOption">
         <div class="checkOptions">
           <h2 class="optionName">Games per set</h2>
-          <p class="optionDesc">Determine the number of games played per set.</p>
+          <p class="optionDesc">Decide the number of games played per set.</p>
         </div>
         <select class="dropdown" id="numGames" name="numGames">
           <option value="6">6</option>
@@ -102,18 +110,40 @@
       </div>   
 
       <div class="matchOption">
-        <h2 class="optionName">Court & facility</h2>
+        <h2 class="optionName">Court &amp; facility</h2>
         <div class="courtGroup">
-          <input type="radio" name="courtType" id="outdoor" class="courtBtn">
+          <input type="radio" name="courtType" id="outdoor" class="courtBtn" checked>
           <label for="outdoor" class="courtType">Outdoor</label>
           <input type="radio" name="courtType" id="indoor" class="courtBtn">
           <label for="indoor" class="courtType">Indoor</label>
         </div>
 
+      </div>
 
-      <a href="scoring.html"><button class="createMatch">Create Match</button></a>
+      <div class="carousel outdoor">
+        <a class="carousel-item" href="#two!"><img src="img/grassCourt.svg"><p class="create_courtName">Grass court</p></a>
+        <a class="carousel-item" href="#one!"><img src="img/clayCourt.svg"><p class="create_courtName">Clay court</p></a>
+        <a class="carousel-item" href="#three!"><img src="img/hardCourt.svg"><p class="create_courtName">Hard court</p></a>
+      </div>    
 
-      </div>                  
+      <div class="carousel indoor">
+        <a class="carousel-item" href="#three!"><img src="img/hardCourt.svg"><p class="create_courtName">Carpet court</p></a>
+        <a class="carousel-item" href="#one!"><img src="img/clayCourt.svg"><p class="create_courtName">Clay court</p></a>
+        <a class="carousel-item" href="#three!"><img src="img/hardCourt.svg"><p class="create_courtName">Hard court</p></a>
+      </div>             
+
+      <div class="matchOption">
+        <a href="scoring.html">
+          <button class="create_button">
+            Create Match
+            <svg class="create_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.55 20.89">
+              <title>arrow</title>
+              <rect class="cls-2" y="9.1" width="17.26" height="2.69" rx="1.34" ry="1.34"/><path class="cls-2 arrow" d="M7.43.43h0a1.34,1.34,0,0,0,.07,1.89l7.68,7.13a1.35,1.35,0,0,1,0,2L7.49,18.56a1.35,1.35,0,0,0-.07,1.9h0a1.34,1.34,0,0,0,1.89.07l9.8-9.11a1.35,1.35,0,0,0,0-2L9.32.36A1.34,1.34,0,0,0,7.43.43Z"/>
+            </svg>
+          </button>
+        </a>
+      </div>
+
 
     </div>
 
@@ -127,6 +157,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script>$(document).ready(function(){$('.carousel').carousel();});</script>
-  <script src="js/main.js"></script>
+  <!-- <script src="js/main.js"></script> -->
+  <script src="js/create.js"></script>
 </body>
 </html>
