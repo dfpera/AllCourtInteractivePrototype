@@ -150,7 +150,7 @@ $(function() {
 
       // Animate question
       $('.q0').hide('drop', {direction: 'left'}, 250);
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
 
       // Animate server ball
@@ -166,7 +166,7 @@ $(function() {
 
       // Animate question
       $('.q0').hide('drop', {direction: 'left'}, 250);
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
 
       // Animate server ball
@@ -175,9 +175,9 @@ $(function() {
     // If service winner button
     } else if ($(this).hasClass('sWinner')) {
       // Animate question
-      $('.q1').hide('drop', {direction: 'left'}, 125);
+      $('.q1').hide('drop', {direction: 'left'}, 500);
       // TODO: Set fault button to default
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
 
       // Set score
       if (serving === pOne) {
@@ -189,9 +189,9 @@ $(function() {
     // If return winner button
     } else if ($(this).hasClass('rWinner')) {
       // Animate question
-      $('.q1').hide('drop', {direction: 'left'}, 125);
+      $('.q1').hide('drop', {direction: 'left'}, 500);
       // TODO: Set fault button to default
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
 
       // Set score
       if (serving === pOne) {
@@ -203,9 +203,9 @@ $(function() {
     // If return error button
     } else if ($(this).hasClass('rError')) {
       // Animate question
-      $('.q1').hide('drop', {direction: 'left'}, 125);
+      $('.q1').hide('drop', {direction: 'left'}, 500);
       // TODO: Set fault button to default
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
 
       // Set score
       if (serving === pOne) {
@@ -223,9 +223,9 @@ $(function() {
     // If double fault button
     } else if ($(this).hasClass('doubleFault')) {
       // Animate question
-      $('.q1').hide('drop', {direction: 'left'}, 125);
+      $('.q1').hide('drop', {direction: 'left'}, 500);
       $('.faultButton').flip('toggle');
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
 
       // Set score
@@ -240,7 +240,7 @@ $(function() {
       // Animate question
       $('.q1').hide('drop', {direction: 'left'}, 250);
       $('.faultButton').flip(false);
-      $('.q2').show('drop', {direction: 'right'}, 250);
+      $('.q2').show('fade', {direction: 'right'}, 500);
       // TODO: Set fault button to default
       moveToBreadcrumb(1);
 
@@ -258,7 +258,7 @@ $(function() {
 
       // Animate question
       $('.q2').hide('drop', {direction: 'left'}, 250);
-      $('.q3').show('drop', {direction: 'right'}, 250);
+      $('.q3').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(2);
 
       // Add arrows
@@ -278,7 +278,7 @@ $(function() {
 
       // Animate question
       $('.q2').hide('drop', {direction: 'left'}, 250);
-      $('.q3').show('drop', {direction: 'right'}, 250);
+      $('.q3').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(2);
 
       // Add arrows
@@ -288,7 +288,7 @@ $(function() {
     } else if ($(this).hasClass('winner')) {
       // Animate question
       $('.q3').hide('drop', {direction: 'left'}, 250);
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
       score($('.question-text .q3 .pName').text());
       clearArrows();
@@ -297,7 +297,7 @@ $(function() {
     } else if ($(this).hasClass('fError')) {
       // Animate question
       $('.q3').hide('drop', {direction: 'left'}, 250);
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
       score($('.question-text .q3 .pName').text());
       clearArrows();
@@ -306,7 +306,7 @@ $(function() {
     } else if ($(this).hasClass('uError')) {
       // Animate question
       $('.q3').hide('drop', {direction: 'left'}, 250);
-      $('.q1').show('drop', {direction: 'right'}, 250);
+      $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
       score($('.question-text .q3 .pName').text());
       clearArrows();
