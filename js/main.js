@@ -1,3 +1,8 @@
+window.odometerOptions = {
+  duration: 100,
+  count: 'count'
+};
+
 var snOne = 'Pachnev';
 var snTwo = 'Verma';
 var lnOne = 'Sam<br>Pachnev';
@@ -22,13 +27,13 @@ function getIcon(iconName) {
 function getPointVal(point) {
   var result = '';
   if (point == 0) {
-    result = '0';
+    result = '100';
   } else if (point == 1) {
-    result = '15';
+    result = '115';
   } else if (point == 2) {
-    result = '30';
+    result = '130';
   } else if (point == 3) {
-    result = '40';
+    result = '140';
   }
   return result;
 }
