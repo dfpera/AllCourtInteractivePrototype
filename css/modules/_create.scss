@@ -216,7 +216,7 @@
     .dropdown-content {
       font-size: 0.9rem;
       font-weight: $normal;
-      background: $light-gray;
+      background: darken(#fff, 3%);
       min-width: 2rem;
       text-align: center;
       padding: 0.35rem 0.5rem 0.35rem 0.5rem;
