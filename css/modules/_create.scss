@@ -280,4 +280,67 @@
   text-decoration: none;
 }
 
+input[type="checkbox"] {
+    opacity: 0;
+}
+
+.checkBox label::before{
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: thin solid $gray; 
+    border-radius: $default-border-radius;  
+    -webkit-transform: translate(-50%, -75%);
+    transform: translate(-50%, -75%);
+}
+
+.checkBox label::after {
+    content: "";
+    display: inline-block;
+    height: 6px;
+    width: 9px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg);
+    margin-top: -0.85rem;
+    margin-left: -0.55rem;
+}
+
+.checkBox label {
+    position: relative;
+}
+.checkBox label::before,
+.checkBox label::after {
+    position: absolute;
+}
+/*Outer-box*/
+.checkBox label::before {
+    top: 3px;
+}
+/*Checkmark*/
+.checkBox label::after {
+    left: 4px;
+    top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.checkBox input[type="checkbox"] + label::after {
+    content: none;
+}
+/*Unhide the checkmark on the checked state*/
+.checkBox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+.checkBox input[type="checkbox"]:checked + label::before {
+  background: $teal;
+  border: thin solid $teal; 
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkBox input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
     
