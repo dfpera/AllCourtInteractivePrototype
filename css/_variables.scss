@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,600');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i,600');
 
 // colour palette
 $orange: #fd6c3e;
@@ -37,6 +37,10 @@ $gradients: (
 $box-shadow: (
   'header': 0 2px 4px rgba($darkest-dark-teal, .75),
   'scoreboard': 0 1px 7px rgba($darkest-dark-teal, .6),
+  'tooltip': 0 2px 7px rgba($dark-teal, .4),
+  'tooltipReversed': 0 -2px 7px rgba($dark-teal, .4),
+  'tooltipArrow': 2px 2px 7px rgba($dark-teal, .4),
+  'tooltipArrowReversed': -2px -2px 7px rgba($dark-teal, .4),
   'sets': 0 1px 5px rgba($darkest-dark-teal, .35),
   'buttons': 0 1px 2px rgba($another-teal, .3),
   'tabs': 0 2px 2px rgba($dark-teal, .14),
@@ -47,7 +51,7 @@ $global-font-family: 'Fira Sans';
 
 $normal: 400;
 $bold: 500;
-$ultra-bold: 00;
+$ultra-bold: 600;
 
 // Just a place with all the special text styles
 $type-styles: (

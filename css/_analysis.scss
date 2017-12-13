@@ -260,6 +260,11 @@
       margin-top: -.15rem;
       margin-bottom: -.15rem;
       padding: .75rem 0;
+      position: relative;
+
+      &.isTooltipActive {
+        background-color: $light-gray;
+      }
     }
     .hBarGraph_barTotalLabel {
       width: 1rem;

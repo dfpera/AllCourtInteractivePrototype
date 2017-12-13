@@ -12,52 +12,27 @@ $(document).ready(function() {
     $secondAnim.removeClass(animClass);
   }, 250);
 
+  var $tooltips = $('.tooltip');
+  var $tooltipContainers = $('.tooltipContainer');
+  var $bars = $('.hBarGraph_bar');
 
-  // var canvas = document.getElementById("canvas");
-  // var yPB = $('.js-yourPointBreakdown');
-  // var ctx = canvas.getContext('2d');
+  $bars.on('click', function() {
+    $thisTooltip = $(this).find($tooltips);
+    $thisTooltipContainer = $(this).find($tooltipContainers);
 
-  // var yellowGradient = ctx.createLinearGradient(0, 0, 200, 0);
-  // yellowGradient.addColorStop(0.4, '#faf369');
-  // yellowGradient.addColorStop(1, '#fbc517');
+    if ($(this).hasClass('isTooltipActive')) {
+      $thisTooltip.removeClass('isActive');
+      $(this).removeClass('isTooltipActive');
 
-  // Chart.defaults.global.defaultFontFamily = 'Fira Sans';
-  // var yPBChart = new Chart(yPB, {
-  //   type: 'horizontalBar',
-  //   barThickness: 50,
-  //   data: {
-  //     labels: ["Winners", "Forced Errors", "Unforced Errors"],
-  //     datasets: [{
-  //       // label: "out of total shots",
-  //       data: [24, 25, 26],
-  //       backgroundColor: yellowGradient,
-  //     },
-  //     {
-  //       // label: "out of what shots",
-  //       data: [32, 4, 15],
-  //     }]
-  //   },
-  //   options: {
-  //     legend: {
-  //       display: false,
-  //     },
-  //     scales: {
-  //       xAxes: [{
-  //         gridLines: {
-  //             display: false,
-  //         },
-  //         ticks: {
-  //           display: false,
-  //         },
-  //       }],
-  //       yAxes: [{
-  //         gridLines: {
-  //             display: false,
-  //         },
-  //       }],
-        
-  //     }
-  //   }
-  // })
+      setTimeout(function() {
+        $thisTooltipContainer.removeClass('isActive');
+      }, 500);
+    }
+    else {
+      $thisTooltip.addClass('isActive');
+      $(this).addClass('isTooltipActive');
+      $thisTooltipContainer.addClass('isActive');
+    }
+  });
 
 });
