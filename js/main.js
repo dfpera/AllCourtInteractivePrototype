@@ -15,6 +15,10 @@ var breadcrumbs = $('.breadcrumbs-dot');
 var curQ = 0;
 var question = [];
 
+function getIcon(iconName) {
+  return ' <div class="icon icon-' + iconName + '"></div>';
+}
+
 function getPointVal(point) {
   var result = '';
   if (point == 0) {
@@ -30,29 +34,16 @@ function getPointVal(point) {
 }
 
 function setUpQ1() {
-  if (serving === pOne) {
-    $('.sWinner .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.sWinner .pName > .icon').addClass('icon-upArrow');
-    $('.fault .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.fault .pName > .icon').addClass('icon-loopBackArrow');
-    $('.doubleFault .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.doubleFault .pName > .icon').addClass('icon-upArrow');
-    $('.rWinner .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.rWinner .pName > .icon').addClass('icon-upArrow');
-    $('.rError .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.rError .pName > .icon').addClass('icon-upArrow');
-  } else {
-    $('.sWinner .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.sWinner .pName > .icon').addClass('icon-upArrow');
-    $('.fault .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.fault .pName > .icon').addClass('icon-loopBackArrow');
-    $('.doubleFault .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.doubleFault .pName > .icon').addClass('icon-upArrow');
-    $('.rWinner .pName').prepend(!(serving === pOne) ? snOne : snTwo);
-    $('.rWinner .pName > .icon').addClass('icon-upArrow');
-    $('.rError .pName').prepend((serving === pOne) ? snOne : snTwo);
-    $('.rError .pName > .icon').addClass('icon-upArrow');
-  }
+  var sWinner = (serving === pOne) ? snOne : snTwo;
+  var fault = (serving === pOne) ? snOne : snTwo;
+  var doubleFault = !(serving === pOne) ? snOne : snTwo;
+  var rWinner = !(serving === pOne) ? snOne : snTwo;
+  var rError = (serving === pOne) ? snOne : snTwo;
+  $('.sWinner .pName').html(sWinner + getIcon('upArrow'));
+  $('.fault .pName').html(fault + getIcon('loopBackArrow'));
+  $('.doubleFault .pName').html(doubleFault + getIcon('upArrow'));
+  $('.rWinner .pName').html(rWinner + getIcon('upArrow'));
+  $('.rError .pName').html(rError + getIcon('upArrow'));
 }
 
 function updateScoreUI() {
@@ -108,10 +99,10 @@ function moveToBreadcrumb(index) {
 }
 
 function clearArrows() {
-  $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
-  $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
-  $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'down'}, 500);
-  $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'down'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'up'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'down'}, 500);
 }
 
 $(function() {
@@ -242,7 +233,7 @@ $(function() {
       // Update question text
       $('.question-text .q3 .pName').text(pOne);
       $('.winner .pName').text(pOne + "'s ");
-      $('.fError .pName').text(pOne + "'s ");
+      $('.fError .pName').text(pTwo + "'s ");
       $('.uError .pName').text(pTwo + "'s ");
 
       // Animate question
@@ -258,7 +249,7 @@ $(function() {
       // Update question text
       $('.question-text .q3 .pName').text(pTwo);
       $('.winner .pName').text(pTwo + "'s ");
-      $('.fError .pName').text(pTwo + "'s ");
+      $('.fError .pName').text(pOne + "'s ");
       $('.uError .pName').text(pOne + "'s ");
 
       // Animate question
