@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: .75rem 1rem 0;
-  background-color: rgba($teal, .05);
+  background-color: mix($teal, #fff, 5%);
   text-align: center;
   z-index: 0;
   margin-left: -1rem;
@@ -44,7 +44,7 @@
     flex: auto;
     position: relative;
     padding: .8rem .5rem .5rem;
-    border-top: 5px solid rgba($teal, .05);
+    border-top: 5px solid mix($teal, #fff, 5%);
     width: calc(33% - #{$analysisTabsGutter});
 
     &:nth-of-type(1) { margin-right: ($analysisTabsGutter/2); }
@@ -212,15 +212,17 @@
     color: $teal;
     font-size: .9rem;
     font-weight: $normal;
+    font-style: italic;
     line-height: 1;
     margin-bottom: .5rem;
+    // margin-top: 1.5rem;
   }
   .hBarGraph_barGroup {
     display: flex;
     align-items: center;
 
     &:first-of-type { 
-      >.hBarGraph_bar { padding-top: .35rem; }
+      .hBarGraph_bar { padding-top: .35rem; }
     }
     &:last-of-type { 
       .hBarGraph_bar:last-of-type { padding-bottom: .35rem; }
@@ -237,66 +239,78 @@
     }
     .hBarGraph_doubleBars {
       flex: 1 0 auto;
-      >:first-child { padding: .35rem 0; }
-      >:last-child { padding-top: 0; }
-      >:last-child .hBar { background: map-get($gradients, 'icecube'); }
+      >.hBarGraph_bar:first-child { padding: .35rem 0; }
+      >.hBarGraph_bar:last-child { padding-top: 0; }
+      >.hBarGraph_bar:last-child .hBar { background: map-get($gradients, 'icecube'); }
+      .hBarGraph_doubleBarsRow:last-child .hBar { background: map-get($gradients, 'icecube'); }
+      .hBarGraph_doubleBarsRow:first-child .hBarGraph_bar { padding: .35rem 0; }
+      .hBarGraph_doubleBarsRow:last-child .hBarGraph_bar { padding-top: 0; }
     }
-      .hBarGraph_bar {
-        flex: 1 0 auto;
-        background-color: mix($light-gray, #fff, 50%);
+      .hBarGraph_doubleBarsRow {
+        display: flex;
+        align-items: center;
+        // &:first-of-type { margin-bottom: -.2rem;}
+        margin-top: .15rem;
+        margin-bottom: .15rem;
+      }
+    .hBarGraph_bar {
+      flex: 1 0 auto;
+      background-color: mix($light-gray, #fff, 50%);
+      border-radius: 5px;
+      margin-top: -.15rem;
+      margin-bottom: -.15rem;
+      padding: .75rem 0;
+    }
+    .hBarGraph_barTotalLabel {
+      width: 1rem;
+      margin-left: .5rem;
+      font-weight: $normal
+    }
+
+      .hBar {
+        // padding: .4rem 0;
+        // margin-bottom: .5rem;
+        height: 1.8rem;
+        min-width: .2rem;
+        transition: $graphTransition;
+        position: relative;
         border-radius: 5px;
-        margin-top: -.15rem;
-        margin-bottom: -.15rem;
-        padding: .75rem 0;
-      }
-      .hBarGraph_barTotalLabel {
-        width: 1rem;
-        margin-left: .5rem;
-        font-weight: $normal
-      }
+        background: map-get($gradients, 'kumquat');
 
-        .hBar {
-          // padding: .4rem 0;
-          // margin-bottom: .5rem;
-          height: 1.8rem;
-          min-width: .2rem;
-          transition: $graphTransition;
-          position: relative;
-          border-radius: 5px;
-          background: map-get($gradients, 'kumquat');
+        &.green { background: map-get($gradients, 'cantaloup'); }
+        &.red { background: map-get($gradients, 'pear'); }
 
-          .stats_rawNum {
-            position: absolute;
-            left: .75rem;
-            top: .4rem;
-          }
-          .stats_percentage:not(.full) {
-            position: absolute;
-            right: -2.5rem;
-            top: .4rem;
-          }
-          .stats_percentage.full {
-            position: absolute;
-            right: .75rem;
-            top: .4rem;
-          }
-
-          &.isAnimating {
-            width: 0 !important;
-            transition: $graphTransition;
-          }
-
-          &.pointsWonLost_winners { 
-            width: 13%; 
-            background: map-get($gradients, 'cantaloup');
-          }
-          &.pointsWonLost_errorsForced {
-            width: 5%;
-            background: map-get($gradients, 'cantaloup');
-            .stats_percentage { left: 2.5rem; }
-          }
-          &.pointsWonLost_unforcedErrors {
-            width: 29%;
-            background: map-get($gradients, 'icecube');
-          }
+        .stats_rawNum {
+          position: absolute;
+          left: .75rem;
+          top: .4rem;
         }
+        .stats_percentage {
+          position: absolute;
+          top: .4rem;
+
+          &:not(.full),
+          &:not(.tooSmall) { right: -2.5rem; }
+          &.full { right: .75rem; }
+          &.tooSmall { left: 2.5rem; }
+        }
+
+        &.isAnimating {
+          width: 0 !important;
+          transition: $graphTransition;
+        }
+
+        &.pointsWonLost_winners { 
+          width: 13%; 
+          background: map-get($gradients, 'cantaloup');
+        }
+        &.pointsWonLost_errorsForced {
+          width: 5%;
+          background: map-get($gradients, 'cantaloup');
+          .stats_percentage { left: 2.5rem; }
+        }
+        &.pointsWonLost_unforcedErrors {
+          width: 29%;
+          background: map-get($gradients, 'icecube');
+        }
+      }

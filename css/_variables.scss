@@ -23,7 +23,7 @@ $default-border-radius: 5px;
 $global-padding: 1rem;
 
 $gradients: (
-  'pear': linear-gradient(135deg, rgba($yellow, .58) 20%, rgba($orange, .58) 100%),
+  'pear': linear-gradient(135deg, rgba($yellow, .58) 0%, rgba($orange, .58) 80%),
   'pearReversed': linear-gradient(45deg, rgba($yellow, .58), rgba($orange, .58) 80%),
   'mint': linear-gradient(135deg, rgba($teal, 1), rgba($dark-teal, 1) 100%),
   'melon': linear-gradient(135deg, rgba($green, 1), rgba($teal, 1) 100%),
