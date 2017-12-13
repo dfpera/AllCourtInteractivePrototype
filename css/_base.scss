@@ -78,13 +78,28 @@
 
   
   //////////////////////////////////////////////////////////
-  .questions, 
+  .questions,
   .question-text > div {
     display: none;
   }
 
-  .questions .btn { height: 100%; }
-  
+  .questions .btn {
+    margin-bottom: 1.0rem;
+  }
+
+  .questions .bip {
+    margin-top: -$global-padding;
+  }
+
+  .questions .fault,
+  .questions .back {
+    height: 70px;
+  }
+
+  .questions .winner {
+    height: 120px;
+  }
+
   .question-text {
     margin-bottom: -.75rem;
   }
