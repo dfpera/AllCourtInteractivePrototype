@@ -27,7 +27,7 @@
           <td class="won">6</td>
           </tr>
           <tr>
-          <td>A. Manachof</td>
+          <td>A. Manachoff</td>
           <td>2</td>
           <td class="won">6</td>
           <td>1</td>
@@ -87,9 +87,7 @@
     </div>
 
     <div class="session">
-      <div class="session_img hitting">
-        <img src="img/hitting.png">
-      </div>
+      <div class="session_img hitting"><img src="img/hitting.png"></div>
       <div class="session_info">
         <p class="session_name">Hitting Session</p>
         <table class="session_scoreboard">
@@ -110,9 +108,29 @@
         </table>
         <p class="session_date">November 15, 2017</p>
       </div>
+
     </div>
 
-    <a href="create-match.html"><button class="create_btn">+</button></a>
+    <div class="fixed-action-btn horizontal click-to-toggle">
+      <a class="btn-floating create">+</a>
+      <ul>
+        <li>
+          <a href="create-match.html" class="btn-floating"><img class="sessions_icon" src="img/matchSmall.svg"></a>
+          <a href="create-match.html" class="session_type">Match</a>
+        </li>
+        <li>
+          <a href="create-match.html" class="btn-floating"><img class="sessions_icon" src="img/practiceSmall.svg"></a>
+          <a href="create-match.html" class="session_type">Practice</a>
+        <li>
+          <a href="create-match.html" class="btn-floating"><img class="sessions_icon" src="img/hittingSmall.svg"></a>
+          <a href="create-match.html" class="session_type">Hitting Session</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Old button -->
+    <!-- a href="create-match.html"><button class="sessions_button">+</button></a> -->
+
 
   </div>
   
@@ -121,6 +139,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

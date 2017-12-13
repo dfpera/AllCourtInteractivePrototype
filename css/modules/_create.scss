@@ -14,8 +14,16 @@
   margin: 1rem;
   padding: 0 0 0.75rem 0;
   border-bottom: thin solid $light-gray;
-  &:last-child {
+  &:nth-last-of-type(-n+4) {
     border: 0;
+  }
+  &:nth-last-child(4) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  &:nth-last-child(1) {
+    margin-top: 0;
+    padding: 0;
   }
   .optionName {
     margin: 0rem 0.85rem 0.35rem 0;
@@ -82,6 +90,9 @@
     cursor: pointer;
     text-align: center;
     color: $dark-teal;
+    &:hover {
+      background: darken(#fff, 3%);
+    }
   }
 }
 
@@ -106,6 +117,9 @@
     cursor: pointer;
     text-align: center;
     color: $dark-teal;
+    &:hover {
+      background: darken(#fff, 3%);
+    }
   }
 }
 
@@ -113,28 +127,126 @@
   float: right;
 }
 
-.createMatch {
+.create_button {
+  $create_btn: map-get($type-styles, 'default');
+  @each $property, $value in $create_btn {
+    #{$property}: #{$value};
+  }  
   text-align: center;
   padding: 0 0.75rem 0 0;
   color: $another-teal;
-  font-size: 1.05rem;
   border: 0;
   background: linear-gradient(135deg, #faf189, #fddc82);
   height: 3rem;
   width: 100%;
   border-radius: $default-border-radius;
+  margin: -0.5rem 0 0 0;
   &:hover {
     cursor: pointer;
-    color: $yellow;
-    background: #fff;
-    transition: background 300ms ease;
+    background: darken(#fddc82, 3%);
   }
 }
 
-.carousel {
-  height: 4rem;
+.create_arrow {
+  margin: 0rem 0 0 0.1rem;
+  width: 1rem;
+  height: 1rem;
+  fill: $dark-teal;
 }
 
+.dropdown-box {
+  display: none;
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    -webkit-perspective: 240px;
+    perspective: 240px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+}
+.carousel.carousel-slider {
+    top: 0;
+    left: 0;
+    height: 0
+}
+.carousel.carousel-slider .carousel-fixed-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 1
+}
+.carousel.carousel-slider .carousel-fixed-item.with-indicators {
+    bottom: 68px
+}
+.carousel.carousel-slider .carousel-item {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+.carousel.carousel-slider .carousel-item h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px
+}
+.carousel.carousel-slider .carousel-item p {
+    font-size: 15px
+}
+.carousel .carousel-item {
+    display: none;
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+.carousel .carousel-item>img {
+    width: 100%;
+}
+
+.carousel .carousel-item .create_courtName {
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  color: $dark-teal;
+}
+
+.carousel .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0
+}
+.carousel .indicators .indicator-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 24px 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color .3s;
+    border-radius: 50%
+}
+.carousel .indicators .indicator-item.active {
+    background-color: #fff;
+}
+.carousel.scrolling .carousel-item .materialboxed,
+.carousel .carousel-item:not(.active) .materialboxed {
+    pointer-events: none
+}
 
 
     
