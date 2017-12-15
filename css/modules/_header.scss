@@ -37,9 +37,11 @@
 
     &Hamburger {
       margin-right: 1rem;
+      position: relative;
     }
     &Kebab {
       margin-left: auto;
+      position: relative;
     }
   }
 
