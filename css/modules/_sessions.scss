@@ -324,5 +324,14 @@ button.btn-floating {
   height: 50%;
   width: 50%;
   display: block;
-  margin: 5rem auto 0 auto;
+  margin: 2.5rem auto 0 auto;
+}
+
+.session_arrow {
+  fill: $teal;
+  width: 4rem;
+  height: 4rem;
+  display: block;
+  margin: 1rem auto 0 10rem;
+  transform: scaleX(-1) rotate(55deg);
 }
