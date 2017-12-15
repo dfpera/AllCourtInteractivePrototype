@@ -102,4 +102,12 @@ $('.indoor').hide();
     $('.carousel').carousel('destroy');
   });
 
+  $('.create_tooltip').hide();
+  $('#fidelity').change(function() {
+    $('.create_tooltip').animate({
+      height: 'toggle',
+      opacity: 'toggle',
+    });
+  });
+
 });
