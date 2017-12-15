@@ -81,6 +81,41 @@
       </div>
 
       <div class="matchOption">
+        <div class="checkOptions">
+          <h2 class="optionName">Serving</h2>
+          <p class="optionDesc">Decide whether or not to record serves.</p>
+        </div>
+        <div class="checkBox">
+          <input type="checkbox" id="tiebreakToggle">
+          <label for="tiebreakToggle"></label>
+        </div>
+      </div>
+
+      <div class="matchOption">
+        <h2 class="optionName fidelityTitle" >Fidelity of stats</h2>
+        <input type="checkbox" name="fidelity" id="fidelity">
+        <label for="fidelity" class="fidelity">?</label>  
+        <p class="optionDesc">Pick which stats to track, in addition to scorekeeping.</p>
+        <div class="statsGroup">
+          <input type="checkbox" name="numSets" id="serves" class="statsBtn" checked>
+          <label for="serves" class="statType">Serves</label>          
+          <input type="checkbox" name="numSets" id="errors" class="statsBtn" checked>
+          <label for="errors" class="statType">Winners &amp; errors</label>
+          <input type="checkbox" name="numSets" id="strokes" class="statsBtn">
+          <label for="strokes" class="statType">Strokes</label>
+          <div class="create_tooltip">
+            <p class="create_selectedStats">For each point, you'll be asked:</p>
+            <ul class="create_statsOnboarding">
+              <li>Who won the rally?</li>
+              <li class="serves">What happened to the first ball?</li>
+              <li class="errors">How did the player score (e.g. on a winner)?</li>
+              <li class="strokes">What stroke/shot finished the rally?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="matchOption">
         <h2 class="optionName">Court &amp; facility</h2>
         <div class="courtGroup">
           <input type="radio" name="courtType" id="outdoor" class="courtBtn" checked>
@@ -98,7 +133,7 @@
       </div>
 
       <div class="carousel indoor">
-        <a class="carousel-item" href="#three!"><img src="img/hardCourt.svg"><p class="create_courtName">Carpet court</p></a>
+        <a class="carousel-item" href="#three!"><img src="img/carpetCourt.svg"><p class="create_courtName">Carpet court</p></a>
         <a class="carousel-item" href="#one!"><img src="img/clayCourt.svg"><p class="create_courtName">Clay court</p></a>
         <a class="carousel-item" href="#three!"><img src="img/hardCourt.svg"><p class="create_courtName">Hard court</p></a>
       </div>
