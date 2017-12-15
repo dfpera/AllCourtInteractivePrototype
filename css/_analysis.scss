@@ -337,6 +337,16 @@
   top: 207px; bottom: 0; right: 0; left: 0;
   background-color: rgba($darkest-teal, .6);
   z-index: 200;
+  opacity: 0;
+  transition: $graphTransition;
+
+  &.isActive {
+    opacity: 1;
+    transition: $graphTransition;
+  }
+  &.isHidden {
+    display: none;
+  }
 
   &_text {
     color: #fff;

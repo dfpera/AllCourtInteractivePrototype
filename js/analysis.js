@@ -6,15 +6,23 @@ $(document).ready(function() {
   var $firstAnim = $('.jsFirstAnim');
   var $secondAnim = $('.jsSecondAnim');
 
-  $firstAnim.removeClass(animClass);
-  console.log("ready");
-  window.setTimeout(function() {
-    $secondAnim.removeClass(animClass);
-  }, 250);
+  var $onboardingButton = $('.js-analysisOnboardingExample_button');
 
   var $tooltips = $('.tooltip');
   var $tooltipContainers = $('.tooltipContainer');
   var $bars = $('.hBarGraph_bar');
+
+  resetAndAnimateBars();
+
+  $onboardingButton.on('click', function() {
+    $('.noScroll').removeClass('noScroll');
+    $('.analysisOnboarding').removeClass('isActive');
+    resetBars();
+    setTimeout(function() {
+      $('.analysisOnboarding').addClass('isHidden');
+      resetAndAnimateBars();
+    }, 800);
+  });
 
   $bars.on('click', function() {
     $thisTooltip = $(this).find($tooltips);
@@ -34,5 +42,32 @@ $(document).ready(function() {
       $thisTooltipContainer.addClass('isActive');
     }
   });
+
+//////////////////////////////////////////////////////////
+  
+  // function
+
+  function resetAndAnimateBars() {
+    if($firstAnim.hasClass(animClass)) {
+      animateBars();
+    } else {
+      resetBars();
+      setTimeout(function() {
+        animateBars();
+      }, 800);
+    }
+  }
+
+  function resetBars() {
+    $firstAnim.addClass(animClass);
+    $secondAnim.addClass(animClass);
+  }
+
+  function animateBars() {
+    $firstAnim.removeClass(animClass);
+    setTimeout(function() {
+      $secondAnim.removeClass(animClass);
+    }, 250);
+  }
 
 });

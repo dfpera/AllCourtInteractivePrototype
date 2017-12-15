@@ -30,13 +30,14 @@
 }
 
 .resultsSet {
-  padding: .75rem;
   background-color: #fff;
   border-radius: $default-border-radius;
   box-shadow: map-get($box-shadow, 'sets');
 }
 
 .resultsSet_title {
+  padding: 1rem;
+  border-bottom: 1px solid rgba($teal, .37);
 }
 
 .resultsSet_score {
@@ -44,47 +45,51 @@
 }
 
 .resultsGame {
-  padding-left: .5rem;
-  padding-right: .5rem;
   &:not(:last-of-type) { border-bottom: 1px dashed rgba($teal, .4); }
 }
 
-.resultsGame_title {
-  font-weight: $normal;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  .resultsGame_title {
+    font-weight: $normal;
+    // padding-top: .75rem;
+    // padding-bottom: .75rem;
+    padding: .75rem 1.25rem;
 
-  &:first-of-type {
-    padding-top: 1rem;
-  }
-}
-
-.resultsGame_score {
-  letter-spacing: 1px;
-
-  &.serveP1 {
-    padding-right: 0.95rem;
-
-    &::before {
-      content: url('../img/tennisBall.svg');
-      display: inline-block;
-      height: 0.75rem;
-      width: 0.75rem;
-      padding-right: 0.2rem;
+    &:first-of-type {
+      padding-top: 1rem;
     }
   }
-  &.serveP2 {
-    padding-left: 0.95rem;
 
-    &::after {
-      content: url('../img/tennisBall.svg');
-      display: inline-block;
-      height: 0.75rem;
-      width: 0.75rem;
-      padding-left: 0.2rem;
+    .resultsGame_score {
+      letter-spacing: 1px;
+
+      &.serveP1 {
+        padding-right: 0.95rem;
+
+        &::before {
+          content: url('../img/tennisBall.svg');
+          display: inline-block;
+          height: 0.75rem;
+          width: 0.75rem;
+          padding-right: 0.2rem;
+        }
+      }
+      &.serveP2 {
+        padding-left: 0.95rem;
+
+        &::after {
+          content: url('../img/tennisBall.svg');
+          display: inline-block;
+          height: 0.75rem;
+          width: 0.75rem;
+          padding-left: 0.2rem;
+        }
+      }
     }
-  }
-}
+
+    .resultsGame_content {
+      padding: .5rem 1.5rem 0;
+      background-color: rgba($teal, .07);
+    }
 
 .resultsPoint {
   font-weight: $normal;
