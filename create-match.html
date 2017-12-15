@@ -48,7 +48,7 @@
       </div>
     </header>
 
-      <p class="matchTypeDesc">Sets follow regular tennis scoring rules.</p>
+      <p class="matchTypeDesc">Sets follow regular tennis scoring rules.</p>  
 
       <div class="matchOption">
         <h2 class="optionName">Number of sets</h2>
@@ -117,6 +117,30 @@
             <p class="dropdown-content">6</p>
             <p class="dropdown-content">7</p>
             <p class="dropdown-content">8</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="matchOption">
+        <h2 class="optionName fidelityTitle" >Fidelity of stats</h2>
+        <input type="checkbox" name="fidelity" id="fidelity">
+        <label for="fidelity" class="fidelity">?</label>  
+        <p class="optionDesc">Pick which stats to track, in addition to scorekeeping.</p>
+        <div class="statsGroup">
+          <input type="checkbox" name="numSets" id="serves" class="statsBtn" checked>
+          <label for="serves" class="statType">Serves</label>          
+          <input type="checkbox" name="numSets" id="errors" class="statsBtn" checked>
+          <label for="errors" class="statType">Winners &amp; errors</label>
+          <input type="checkbox" name="numSets" id="strokes" class="statsBtn">
+          <label for="strokes" class="statType">Strokes</label>
+          <div class="create_tooltip">
+            <p class="create_selectedStats">For each point, you'll be asked:</p>
+            <ul class="create_statsOnboarding">
+              <li>Who won the rally?</li>
+              <li class="serves">What happened to the first ball?</li>
+              <li class="errors">How did the player score (e.g. on a winner)?</li>
+              <li class="strokes">What stroke/shot finished the rally?</li>
+            </ul>
           </div>
         </div>
       </div>
