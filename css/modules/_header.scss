@@ -8,6 +8,15 @@
   box-shadow: map-get($box-shadow, 'header');
   position: relative;
 }
+  .header-analysis,
+  .header-results {
+    position: fixed !important;
+    width: 360px;
+    // top: 0;
+    // right: 0;
+    // left: 0;
+    z-index: 100;
+  }
 
   .header_androidStatusBar {
     background-image: url($icon-path + 'androidStatusbar.svg');
