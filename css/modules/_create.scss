@@ -26,7 +26,7 @@
     padding: 0;
   }
   .optionName {
-    margin: 0rem 0.85rem 0.35rem 0;
+    margin: 0rem 0rem 0.35rem 0;
     font-size: 1rem;
     color: $bold;
     font-weight: $normal;
@@ -84,6 +84,35 @@
     box-shadow: map-get($box-shadow, 'buttons');
     border-radius: $default-border-radius;
     min-width: 4.5rem;
+    padding: 0.5rem 0.5rem 0.6rem 0.5rem;
+    margin: 0.2rem;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    color: $dark-teal;
+    &:hover {
+      background: darken(#fff, 3%);
+    }
+  }
+}
+
+.statsGroup {
+  text-align: center;
+  margin-top: 0.35rem;
+  overflow: hidden;
+  .statsBtn {
+    display: none;
+  }
+  .statsBtn:checked + .statType {
+    background: $teal;
+    color: #fff;
+    transition: background 300ms ease;
+  }
+  .statType {
+    background: #fff;
+    box-shadow: map-get($box-shadow, 'buttons');
+    border-radius: $default-border-radius;
+    min-width: 4.9rem;
     padding: 0.5rem 0.5rem 0.6rem 0.5rem;
     margin: 0.2rem;
     display: inline-block;
@@ -387,4 +416,96 @@ input[type="checkbox"] {
     outline: rgb(59, 153, 252) auto 5px;
 }
 
-    
+.create_selectedStats {
+  margin: 0.25rem 0.25rem 0rem 0.3rem;
+  line-height: 1.15rem;
+  font-weight: $normal;
+  font-size: 0.75rem;
+  text-align: left;
+  color: darken($gray, 35%);
+  letter-spacing: 0.015rem;
+}
+
+.create_statsOnboarding {
+  margin: 0.1rem 0.25rem 0rem 0.3rem;
+  line-height: 1.1rem;
+  font-weight: $normal;
+  font-size: 0.75rem;
+  text-align: left;
+  color: darken($gray, 35%);
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 1.5rem;
+  list-style: none;
+}
+
+.create_tooltip {
+  background: lighten($light-gray, 2%);
+  transition: background 0.3s ease;
+  border-radius: $default-border-radius;
+  margin: 0.3rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
+.serves, .errors, .strokes {
+  display: none;
+}
+
+.statsGroup div {
+  display: none;
+}
+
+.fidelityTitle {
+  display: inline;
+}
+
+#fidelity {
+  opacity: 0;
+  display: none;
+}
+
+.fidelity {
+  display: inline-block;
+  color: darken($gray, 20%);
+  border: thin solid darken($gray, 20%);
+  font-weight: $normal;
+  padding: 0 0 0.1rem 0.05rem;
+  border-radius: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  margin: 0 0 0.4rem 0.15rem;
+  &:hover {
+    background: $light-gray;
+    cursor: pointer;
+  }
+}
+
+#fidelity:checked ~ label{
+  color: #fff;
+  background: darken($gray, 15%);
+  border: thin solid darken($gray, 15%);
+  transition: background 0.3s ease;
+}
+
+#fidelity:checked ~ .statsGroup div {
+  display: block;
+}
+
+#fidelity:checked ~ .create-tooltip p {
+  display: block;
+}
+
+#serves:checked ~ .create_tooltip ul .serves {
+  display: block;
+}
+
+#errors:checked ~ .create_tooltip ul .errors {
+  display: block;
+}
+
+#strokes:checked ~ .create_tooltip ul .strokes {
+  display: block;
+}

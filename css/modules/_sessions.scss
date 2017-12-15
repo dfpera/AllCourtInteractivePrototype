@@ -1,7 +1,7 @@
 .session {
   box-shadow: map-get($box-shadow, 'buttons');
   padding: 0;
-  margin: 1rem;
+  margin: 1rem 1rem 0.95rem 1rem;
   border-radius: 3px;
   height: 7.5rem;
   .session_bg {
@@ -17,14 +17,14 @@
     float: left;
     position: relative;
 
-    &.match {
+    &.clay {
       background-color: $orange;
     }
-    &.hitting {
+    &.hardCourt {
       background-color: $navy-blue;
     }
-    &.practice {
-      background-color: $green;
+    &.grass {
+      background-color: darken($green, 12.5%);
     }
 
     > img {
@@ -120,13 +120,15 @@
     vertical-align: middle;
     text-decoration: none;
     &.create {
+      overflow: hidden;
       font-weight: $normal;
       width: 3.25rem;
       height: 3.25rem;
+      line-height: 2rem;
       border-radius: 3.25rem 0 0 0;
       font-size: 3rem;
       text-align: center;
-      padding: 0.2rem 0 0 0.5rem;
+      padding: 0.9rem 0 0 0.5rem;
       box-shadow: 0rem -0.04rem 0.5rem 0px rgba(0,0,0,0.15);
     }
     &.create:hover {
@@ -178,7 +180,6 @@ button.btn-floating {
     position: absolute;
     top: rem-calc(564);
     right: 0;
-    margin-bottom: 0;
     z-index: 998;
 }
 
@@ -247,9 +248,6 @@ button.btn-floating {
 .fixed-action-btn ul li {
     margin-bottom: 15px
 }
-// .fixed-action-btn ul a.btn-floating {
-//     opacity: 0
-// }
 .fixed-action-btn .fab-backdrop {
     position: absolute;
     top: 0;
