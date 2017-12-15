@@ -117,8 +117,18 @@ function moveToBreadcrumb(index) {
 function clearArrows() {
   $('.scoreboard_scoreGroupP1 .icon-upArrow').hide('drop', {direction: 'up'}, 500);
   $('.scoreboard_scoreGroupP1 .icon-downArrow').hide('drop', {direction: 'down'}, 500);
+  $('.scoreboard_scoreGroupP1 .icon-faultBall, ' +
+    '.scoreboard_scoreGroupP1 .icon-doubleFaultBall')
+    .removeClass('icon-faultBall')
+    .removeClass('icon-doubleFaultBall')
+    .addClass('icon-tennisBall');
   $('.scoreboard_scoreGroupP2 .icon-upArrow').hide('drop', {direction: 'up'}, 500);
   $('.scoreboard_scoreGroupP2 .icon-downArrow').hide('drop', {direction: 'down'}, 500);
+  $('.scoreboard_scoreGroupP2 .icon-faultBall, ' +
+    '.scoreboard_scoreGroupP2 .icon-doubleFaultBall')
+    .removeClass('icon-faultBall')
+    .removeClass('icon-doubleFaultBall')
+    .addClass('icon-tennisBall');
 }
 
 $(function() {
@@ -176,7 +186,7 @@ $(function() {
     } else if ($(this).hasClass('sWinner')) {
       // Animate question
       $('.q1').hide('drop', {direction: 'left'}, 500);
-      // TODO: Set fault button to default
+      $('.faultButton').flip(false);
       $('.q1').show('fade', {direction: 'right'}, 500);
 
       // Set score
@@ -185,12 +195,13 @@ $(function() {
       } else if (serving === pTwo) {
         score(pTwo);
       }
+      clearArrows();
 
     // If return winner button
     } else if ($(this).hasClass('rWinner')) {
       // Animate question
       $('.q1').hide('drop', {direction: 'left'}, 500);
-      // TODO: Set fault button to default
+      $('.faultButton').flip(false);
       $('.q1').show('fade', {direction: 'right'}, 500);
 
       // Set score
@@ -199,12 +210,13 @@ $(function() {
       } else if (serving === pTwo) {
         score(pOne);
       }
+      clearArrows();
 
     // If return error button
     } else if ($(this).hasClass('rError')) {
       // Animate question
       $('.q1').hide('drop', {direction: 'left'}, 500);
-      // TODO: Set fault button to default
+      $('.faultButton').flip(false);
       $('.q1').show('fade', {direction: 'right'}, 500);
 
       // Set score
@@ -213,6 +225,7 @@ $(function() {
       } else if (serving === pTwo) {
         score(pTwo);
       }
+      clearArrows();
 
     // If fault button
     } else if ($(this).hasClass('fault')) {
@@ -220,11 +233,21 @@ $(function() {
       $('.faultButton').flip('toggle');
       moveToBreadcrumb(0);
 
+      if (serving === pOne) {
+        $('.scoreboard_scoreGroupP1 .icon-tennisBall')
+          .removeClass('icon-tennisBall')
+          .addClass('icon-faultBall');
+      } else {
+        $('.scoreboard_scoreGroupP2 .icon-tennisBall')
+          .removeClass('icon-tennisBall')
+          .addClass('icon-faultBall');
+      }
+
     // If double fault button
     } else if ($(this).hasClass('doubleFault')) {
       // Animate question
       $('.q1').hide('drop', {direction: 'left'}, 500);
-      $('.faultButton').flip('toggle');
+      $('.faultButton').flip(false);
       $('.q1').show('fade', {direction: 'right'}, 500);
       moveToBreadcrumb(0);
 
@@ -234,6 +257,7 @@ $(function() {
       } else if (serving === pTwo) {
         score(pOne);
       }
+      clearArrows();
 
     // If ball-in button
     } else if ($(this).hasClass('ballin')) {
@@ -241,7 +265,6 @@ $(function() {
       $('.q1').hide('drop', {direction: 'left'}, 250);
       $('.faultButton').flip(false);
       $('.q2').show('fade', {direction: 'right'}, 500);
-      // TODO: Set fault button to default
       moveToBreadcrumb(1);
 
     // If pOne score button
