@@ -47,6 +47,10 @@ header.results {
 .resultsSet_title {
 }
 
+.resultsSet_score {
+  letter-spacing: 2px;
+}
+
 .resultsGame {
   padding-left: .5rem;
   padding-right: .5rem;
@@ -63,12 +67,71 @@ header.results {
   }
 }
 
+.resultsGame_score {
+  letter-spacing: 1px;
+
+  &.serveP1 {
+    padding-right: 0.95rem;
+
+    &::before {
+      content: url('../img/tennisBall.svg');
+      display: inline-block;
+      height: 0.75rem;
+      width: 0.75rem;
+      padding-right: 0.2rem;
+    }
+  }
+  &.serveP2 {
+    padding-left: 0.95rem;
+
+    &::after {
+      content: url('../img/tennisBall.svg');
+      display: inline-block;
+      height: 0.75rem;
+      width: 0.75rem;
+      padding-left: 0.2rem;
+    }
+  }
+}
+
 .resultsPoint {
   font-weight: $normal;
+  font-size: 0.8rem;
   padding-left: .5rem;
   padding-right: .5rem;
   padding-bottom: .75rem;
   display: flex;
+
+  .resultsPoint_score {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .resultsPoint-p1Point::before {
+    content: "";
+    display: inline-block;
+    height: 0.75rem;
+    width: 0.75rem;
+    padding-right: 0.2rem;
+  }
+
+  .resultsPoint-p2Point::after {
+    content: "";
+    display: inline-block;
+    height: 0.75rem;
+    width: 0.75rem;
+    padding-left: 0.2rem;
+  }
+
+  .resultsPoint-p1Point.fault::before,
+  .resultsPoint-p2Point.fault::after {
+    content: url("../img/faultBall.svg");
+  }
+
+  .resultsPoint-p1Point.doubleFault::before,
+  .resultsPoint-p2Point.doubleFault::after {
+    content: url("../img/doubleFaultBall.svg");
+  }
 
   &-p1 {
     // width: 40%;
