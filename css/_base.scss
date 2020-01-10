@@ -96,6 +96,16 @@
     height: 70px;
   }
 
+  /* 
+    some bug in the jquery flip plugin that is adding backface-visibility to
+    every child, so need to set the transform-style on the button that
+    contains the icons so they hide properly
+  */
+  .questions .fault,
+  .questions .doubleFault {
+    transform-style: preserve-3d;
+  }
+
   .questions .winner {
     height: 120px;
   }

@@ -4,3 +4,4 @@ prepros-6.config
 
 *.DS_Store
 /css/.sass-cache/*
+/.sass-cache/*
